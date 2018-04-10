@@ -1,5 +1,5 @@
-./idea/
-./dist/
+.idea
+dist
 yarn.lock
 yarn-error.log
-./node_modules/
+node_modules
