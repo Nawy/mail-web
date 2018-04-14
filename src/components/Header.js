@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {Collapse, Nav, Navbar, NavbarToggler, NavItem} from "reactstrap";
-import {Link} from "react-router-dom";
+import {Button, ButtonGroup, Col, Row} from "reactstrap";
 
 class Header extends React.Component {
 
@@ -21,8 +20,16 @@ class Header extends React.Component {
 
     render() {
         return (
-           <div/>
-        )
+            <Row style={{borderBottom: '1px solid', marginTop: '5%'}}>
+                <Col><h3>Messenger</h3></Col>
+                <Col className="text-right">
+                    <ButtonGroup>
+                        <Button outline color="secondary">INBOX</Button>
+                        <Button outline color="secondary">OUTBOX</Button>
+                    </ButtonGroup>
+                </Col>
+            </Row>
+        );
     };
 }
 
