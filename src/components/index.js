@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
 import {Container} from "reactstrap";
 import Header from "./header";
-import TextareaAutosize from "react-textarea-autosize";
+import Choose from "./choose";
+import Write from "./write";
+// // import TextareaAutosize from "react-textarea-autosize";
+// import TextareaAutosize from "react-textarea-autosize"
 
 
 const App = () => (
@@ -16,22 +19,9 @@ const App = () => (
 
 const Main = () => (
     <div className="container">
-        <Route exact path='/' component={HomePage}/>
+        <Route exact path='/' component={Choose}/>
+        <Route exact path='/write' component={Write}/>
     </div>
-);
-
-const HomePage = () => (
-    <div className="row">
-        <div className="row">
-            <h1>Заголовок письма</h1>
-            <TextareaAutosize>Write some message</TextareaAutosize>
-        </div>
-
-        <div className="row">
-            <button className="btn btn-outline-primary"><b>SEND</b></button>
-        </div>
-    </div>
-
 );
 
 export default App;
