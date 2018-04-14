@@ -8,6 +8,7 @@ import logger from 'redux-logger'
 import reducers from './reducers'
 import App from './components/index';
 import 'bootstrap/dist/css/bootstrap.css';
+import './style/MainStyle.scss';
 
 let middleware = [thunkMiddleware, logger];
 const defaultStore = {};

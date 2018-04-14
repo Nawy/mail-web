@@ -21,20 +21,7 @@ class Header extends React.Component {
 
     render() {
         return (
-            <Navbar color="light" light expand="md">
-                <Link className="navbar-brand" to="/">PERSEUS</Link>
-                <NavbarToggler onClick={this.toggle}/>
-                <Collapse isOpen={this.state.isOpen} navbar>
-                    <Nav className="ml-auto" navbar>
-                        <NavItem>
-                            <Link className="nav-link" to="/">Home</Link>
-                        </NavItem>
-                        <NavItem>
-                            <Link className="nav-link" to="/roster">Roster</Link>
-                        </NavItem>
-                    </Nav>
-                </Collapse>
-            </Navbar>
+           <div/>
         )
     };
 }

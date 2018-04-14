@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
-import {Container, Jumbotron} from "reactstrap";
+import {Container} from "reactstrap";
 import Header from "./Header";
+import TextareaAutosize from "react-textarea-autosize";
+
 
 const App = () => (
     <BrowserRouter>
@@ -19,7 +21,9 @@ const Main = () => (
 );
 
 const HomePage = () => (
-    <Jumbotron>Hello world!</Jumbotron>
+    <div>
+    <TextareaAutosize>Write some message</TextareaAutosize>
+    </div>
 );
 
 export default App;
