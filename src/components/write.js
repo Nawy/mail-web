@@ -1,21 +1,24 @@
 import React, {Component} from 'react';
+import TextareaAutosize from 'react-autosize-textarea';
 
-const write = () => (
+const Write = () => (
     <div className="container">
-        <div className="row">
-            <h1>Заголовок письма</h1>
-            <p>Умирать не страшно. Страшно, когда выпадаешь из реальности. Или когда реальность выбрасывает тебя.</p>
-            {/*<TextareaAutosize value="Test"></TextareaAutosize>*/}
-            <TextareaAutosize
-                placeholder='try writing some lines'
-            />
+        <div className="row justify-content-end">
+            <button className="btn btn-outline-primary"><b>ПОСЛАТЬ</b></button>
         </div>
 
         <div className="row">
-            <button className="btn btn-outline-primary"><b>SEND</b></button>
+            <div className="col-sm-12">
+                <TextareaAutosize placeholder='Адрес'/>
+            </div>
+        </div>
+        <div className="row">
+            <div className="col-sm-12">
+                <TextareaAutosize placeholder='Текст письма'/>
+            </div>
         </div>
     </div>
 );
 
-export default write;
+export default Write;
 
