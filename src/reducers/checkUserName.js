@@ -1,12 +1,12 @@
 import actionTypes from '../actions/actionTypes'
 
 const INITIAL_STATE = {
-    counter: 0
+    name: "NO"
 };
 
 const increment = (state = INITIAL_STATE, action) => {
-    if(action.type === actionTypes.INC) {
-        return {...state, counter: state.counter + 1};
+    if(action.type === actionTypes.CHECK_USER_NAME) {
+        return {...state, name: "Ok"};
     }
     return state;
 };

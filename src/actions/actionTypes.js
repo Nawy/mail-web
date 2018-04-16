@@ -1,7 +1,7 @@
 import keyMirror from 'keymirror'
 
 const actionTypes = {
-    INC: null
+    CHECK_USER_NAME: null
 };
 
 export default keyMirror(actionTypes);

@@ -1,0 +1,65 @@
+@import "./variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@media (min-width: 576px) {
+  .container {
+    width: 400px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .container {
+    width: 700px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .container {
+    width: 700px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .container {
+    width: 700px;
+  }
+}
+
+textarea {
+  //font-family: 'EB Garamond', serif;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  color: #474747;
+  background: #F7F5F3;
+  overflow: hidden;
+  resize: none;
+  width:100%;
+  border: none #474747;
+}
+
+h1, h2, h3, h4, .nav-link {
+  //font-family: 'EB Garamond', serif;
+  font-family: 'Open Sans', sans-serif;
+  color: #474747;
+  background: #F7F5F3;
+}
+
+p {
+  //font-family: 'EB Garamond', serif;
+  font-family: 'Open Sans', sans-serif;
+  color: #474747;
+  font-size: 1.1rem;
+}
+
+textarea:hover,
+textarea:active,
+textarea:focus
+{
+  outline:0 !important;
+  -webkit-appearance:none;
+}
