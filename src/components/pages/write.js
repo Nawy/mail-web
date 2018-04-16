@@ -8,11 +8,11 @@ const Write = () => (
         </div>
 
         <div className="row element-block">
-            <form class="form-inline inline-write-login">
-                <input type="text" className="form-control" placeholder="От кого"/>
-                <label class="sr-only" for="inlineFormInput">Уже существует</label>
-                <input type="text" className="form-control" placeholder="Пароль"/>
-                <button type="submit" class="btn btn-primary">Submit</button>
+            <form className="form-inline row">
+                <input type="text" className="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="От кого"/>
+                <label className="mr-sm-2">Уже существует</label>
+                <input type="password" className="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Пароль"/>
+                <button type="submit" className="btn btn-primary">OK</button>
             </form>
         </div>
         <div className="row element-block">

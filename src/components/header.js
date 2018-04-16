@@ -23,9 +23,6 @@ class Header extends React.Component {
     render() {
         return (
            <div className="container">
-               <div className="row justify-content-md-center">
-                   <h1>EMail 2.0</h1>
-               </div>
                <ModeSwitcher/>
            </div>
         )
