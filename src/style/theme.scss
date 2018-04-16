@@ -1,6 +1,7 @@
 @import "./variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 @media (min-width: 576px) {
   .container {
@@ -30,8 +31,9 @@
 }
 
 textarea {
-  font-family: 'EB Garamond', serif;
-  font-size: 1.4rem;
+  //font-family: 'EB Garamond', serif;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
   color: #474747;
   background: #F7F5F3;
   overflow: hidden;
@@ -41,15 +43,17 @@ textarea {
 }
 
 h1, h2, h3, h4, .nav-link {
-  font-family: 'EB Garamond', serif;
+  //font-family: 'EB Garamond', serif;
+  font-family: 'Open Sans', sans-serif;
   color: #474747;
   background: #F7F5F3;
 }
 
 p {
-  font-family: 'EB Garamond', serif;
+  //font-family: 'EB Garamond', serif;
+  font-family: 'Open Sans', sans-serif;
   color: #474747;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 textarea:hover,

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Write from "./write";
-import Letters from "./letters";
-import Choose from "./choose";
+import Write from "./pages/write";
+import Letters from "./pages/letters";
+import Choose from "../containers/choose";
 import {Route, Switch} from "react-router-dom";
 
 const Router = () => (

@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux'
-import increment from "./increment";
+import checkUserName from "./checkUserName";
 
 const rootReducer = combineReducers({
-    increment
+    checkUserName
 });
 
 export default rootReducer;
