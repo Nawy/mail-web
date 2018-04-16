@@ -1,0 +1,32 @@
+import {apiGet} from "../repository/apiClient";
+
+export const commonGetAction = (url, params, actionName) => {
+    return dispatch => {
+        dispatch({type: actionName + '_STARTED'});
+        apiGet(
+            url,
+            params,
+            data => dispatch({type: actionName + '_SUCCESS', payload: data}),
+            error => dispatch({type: actionName + '_FAILURE', payload: error, error: true})
+        )
+    }
+};
+
+const INITIAL_STATE = {
+    isLoading: false,
+    error: null,
+    data: null
+};
+
+export const commonReducer = (actionName, action, state = INITIAL_STATE) => {
+    if (action.type === actionName + '_STARTED') {
+        return {...state, isLoading: true, error: null};
+    }
+    if (action.type === actionName + '_SUCCESS') {
+        return {...state, isLoading: false, data: action.payload, error: null};
+    }
+    if (action.type === actionName + '_FAILURE') {
+        return {...state, isLoading: false, data: null, error: action.payload};
+    }
+    return state;
+};
