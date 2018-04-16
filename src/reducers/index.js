@@ -2,12 +2,6 @@ import {combineReducers} from 'redux'
 import {commonReducer} from "../common/reduxHelper";
 import actionTypes from '../actions/actionTypes'
 
-const INITIAL_STATE = {
-    isLoading: false,
-    error: null,
-    data: null
-};
-
 const rootReducer = combineReducers({
     checkUserName: (state, action) => commonReducer(actionTypes.CHECK_USER_NAME, action, state),
     getChatNames: (state, action) => commonReducer(actionTypes.GET_CHAT_NAMES, action, state),
