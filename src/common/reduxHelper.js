@@ -1,4 +1,4 @@
-import {apiGet} from "../repository/apiClient";
+import {apiGet, apiPost} from "../repository/apiClient";
 
 export const commonGetAction = (url, params, actionName) => {
     return dispatch => {
@@ -6,6 +6,18 @@ export const commonGetAction = (url, params, actionName) => {
         apiGet(
             url,
             params,
+            data => dispatch({type: actionName + '_SUCCESS', payload: data}),
+            error => dispatch({type: actionName + '_FAILURE', payload: error, error: true})
+        )
+    }
+};
+
+export const commonPostAction = (url, data, actionName) => {
+    return dispatch => {
+        dispatch({type: actionName + '_STARTED'});
+        apiPost(
+            url,
+            data,
             data => dispatch({type: actionName + '_SUCCESS', payload: data}),
             error => dispatch({type: actionName + '_FAILURE', payload: error, error: true})
         )
