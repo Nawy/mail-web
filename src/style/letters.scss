@@ -1,0 +1,19 @@
+@import "theme";
+
+
+.letter-card {
+  @extend .card;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+//.letter-card-header {
+//  @extend .card-title;
+//  margin: 5px;
+//}
+
+//.letter-card-block {
+//  @extend .card-block;
+//  padding: 5px;
+//}

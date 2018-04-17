@@ -12,14 +12,14 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .container {
-    width: 800px;
+    width: 900px;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .container {
-    width: 800px;
+    width: 900px;
   }
 }
 
@@ -52,14 +52,12 @@ textarea, .form-control {
 }
 
 h1, h2, h3, h4, .nav-link {
-  //font-family: 'EB Garamond', serif;
   font-family: 'Open Sans', sans-serif;
   color: #474747;
   background: #F7F5F3;
 }
 
 p {
-  //font-family: 'EB Garamond', serif;
   font-family: 'Open Sans', sans-serif;
   color: #474747;
   font-size: 1.1rem;
