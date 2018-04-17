@@ -70,3 +70,13 @@ textarea:focus
   outline:0 !important;
   -webkit-appearance:none;
 }
+
+
+.left-main-col {
+  @extend .col-sm-4;
+  padding: 5px;
+}
+.right-main-col {
+  @extend .col-sm-8;
+  padding: 5px;
+}
