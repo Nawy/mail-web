@@ -5,15 +5,23 @@ const common = require('./webpack.common');
 
 module.exports = merge(common, {
 
-    devServer: {
-        port: 3000,
-        host: 'localhost'
-    },
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebPackPlugin({
             filename: "index.html",
             template: "./src/index.tpl.html"
         })
-    ]
+    ],
+    devServer: {
+        progress: true,
+        historyApiFallback: true,
+        port: 3000,
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8090',
+                changeOrigin: true,
+                pathRewrite: {'^/api': ''},
+            }
+        }
+    }
 });

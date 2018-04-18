@@ -1,44 +1,35 @@
 import request from 'superagent'
 import api from "./index";
 
-const getAuthorizedHeader = () => {
-    /* const token = auth.getAccessToken();
-     if (token !== null) return {
-         Authorization: token
-     };*/
-    return {};
+const errorProcessing = (err, res, success, fail) => {
+    if (err || !res.ok) {
+        if (err)
+            fail(err.response);
+        else if (res && res.body)
+            fail(res.body.message);
+    } else {
+        success(res.body);
+    }
 };
 
 export const apiGet = (url, params, success, fail) => {
     return request
         .get(api.URL + url)
-        .set(getAuthorizedHeader())
         .query(params)
-        .end((err, res) => {
-            if (err || !res.ok) {
-                if (err)
-                    fail(err.response);
-                else if (res && res.body)
-                    fail(res.body.message);
-            } else {
-                success(res.body);
-            }
-        })
+        .end((err, res) => {errorProcessing(err,res,success,fail)})
 };
 
 export const apiPost = (url, data, success, fail) => {
     request
         .post(api.URL + url)
         .send(data)
-        .set(getAuthorizedHeader())
-        .end((err, res) => {
-            if (err || !res.ok) {
-                if (err)
-                    fail(err.response);
-                else if (res && res.body)
-                    fail(res.body.message);
-            } else {
-                success(res.body);
-            }
-        })
+        .end((err, res) => {errorProcessing(err,res,success,fail)})
+};
+
+export const loginPost = (login, password, success, fail) => {
+    request
+        .post(api.URL + api.LOGIN)
+        .type('form')
+        .send({name: login, password: password})
+        .end((err, res) => {errorProcessing(err,res,success,fail)})
 };

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 import {Container} from "reactstrap";
-import Header from "./header";
-import Router from "./router"
+import Header from "./header/header";
+import Router from "../containers/router"
 
 
 const App = () => (

@@ -1,4 +1,10 @@
 import {apiGet, apiPost} from "../repository/apiClient";
+import {deleteSessionCookie} from "./sessionHolder";
+
+function removeSessionCookieIfStatusUnauthorized(error){
+    console.log(error);
+    if (error.status == 401) deleteSessionCookie();
+}
 
 export const commonGetAction = (url, params, actionName) => {
     return dispatch => {
@@ -7,7 +13,10 @@ export const commonGetAction = (url, params, actionName) => {
             url,
             params,
             data => dispatch({type: actionName + '_SUCCESS', payload: data}),
-            error => dispatch({type: actionName + '_FAILURE', payload: error, error: true})
+            error => {
+                removeSessionCookieIfStatusUnauthorized(error);
+                dispatch({type: actionName + '_FAILURE', payload: error, error: true});
+            }
         )
     }
 };
@@ -19,7 +28,10 @@ export const commonPostAction = (url, data, actionName) => {
             url,
             data,
             data => dispatch({type: actionName + '_SUCCESS', payload: data}),
-            error => dispatch({type: actionName + '_FAILURE', payload: error, error: true})
+            error => {
+                removeSessionCookieIfStatusUnauthorized(error);
+                dispatch({type: actionName + '_FAILURE', payload: error, error: true});
+            }
         )
     }
 };

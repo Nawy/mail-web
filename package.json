@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "react-loaders": "^3.0.1",
+    "loaders.css": "^0.1.2",
     "bootstrap": "^4.0.0",
     "keymirror": "^0.1.1",
     "lodash": "^4.17.5",
