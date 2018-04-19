@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import Router from "../components/router";
+import Router from "../components/Router";
 import {withRouter} from "react-router-dom";
 
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import LetterList from '../blocks/letterList'
-import AddressList from '../blocks/addressList'
+import LetterList from '../blocks/LetterList'
+import AddressList from '../blocks/AddressList'
 import "../../style/letters.scss"
 
 const Letters = () => (

@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import Write from "./pages/write";
-import Letters from "./pages/letters";
-import Choose from "../containers/choose";
+import Write from "./pages/Write";
+import Letters from "./pages/Letters";
+import Choose from "../containers/Choose";
 import {Route, Switch} from "react-router-dom";
 
 const Router = (props) => {
-    if (!props.isAuthorized) return <Choose/>;
+    //if (!props.isAuthorized) return <Choose/>;
     return (
         <main>
             <Switch>

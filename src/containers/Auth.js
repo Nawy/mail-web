@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {getSessionUserNameAction, loginAction} from "../actions/auth";
-import Auth from "../components/header/auth";
+import Auth from "../components/header/Auth";
 
 
 const mapDispatchToProps = (dispatch) => {

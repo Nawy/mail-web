@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     //Content
-    entry: ['babel-polyfill', 'react-hot-loader/patch', './src/index.js'],
+    entry: ['babel-polyfill', 'react-hot-loader/patch', './src/index.jsx'],
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "[name].js",
@@ -11,11 +11,21 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.(js|jsx)$/,
-                loaders: 'babel-loader',
+                test: /\.js$/,
+                loader: 'babel-loader',
                 exclude: /node_modules/,
+                query: {
+                    presets: ['stage-1']
+                }
             },
-
+            {
+                test: /\.jsx$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['react', 'stage-1']
+                }
+            },
             {
                 test: /\.css$/,
                 use: [
