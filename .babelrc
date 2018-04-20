@@ -1,7 +1,5 @@
 {
-  "presets": [
-    "react", "stage-1"
-  ],
+  "presets": [],
   "plugins": [
     "react-hot-loader/babel"
   ]

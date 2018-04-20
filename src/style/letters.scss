@@ -8,12 +8,11 @@
   margin-bottom: 10px;
 }
 
-//.letter-card-header {
-//  @extend .card-title;
-//  margin: 5px;
-//}
+.letter-card-sender {
+  @extend .letter-card;
+  background-color: #F8F8F8;
+}
 
-//.letter-card-block {
-//  @extend .card-block;
-//  padding: 5px;
-//}
+.letter-card-header {
+  @extend .d-flex, .justify-content-end;
+}

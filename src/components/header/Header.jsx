@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import ModeSwitcher from '../../containers/modeSwithcer';
-import Auth from "../../containers/auth";
+import ModeSwitcher from '../../containers/ModeSwithcer';
+import Auth from "../../containers/Auth";
 
 
 const Header = (props) => {

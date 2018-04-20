@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {checkUserName} from "../actions/users";
-import Choose from "../components/pages/choose";
+import Choose from "../components/pages/Choose";
 
 const mapDispatchToProps = (dispatch) => {
     return {

@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import ModeSwithcer from "../components/header/modeSwitcher";
+import ModeSwithcer from "../components/header/ModeSwitcher";
 
 
 const mapDispatchToProps = (dispatch) => {
