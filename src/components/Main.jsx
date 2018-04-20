@@ -1,8 +1,6 @@
 import React from 'react';
-import Write from "./pages/Write";
 import Letters from "./pages/Letters";
-import Choose from "../containers/Choose";
-import {Route, Switch, BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 const CustomRouter = () => {
     //if (!props.isAuthorized) return <Choose/>;
@@ -10,9 +8,7 @@ const CustomRouter = () => {
         <main>
             <BrowserRouter>
                 <Switch>
-                    <Route exact path='/' component={Choose}/>
-                    <Route exact path='/write' component={Write}/>
-                    <Route exact path='/letters' component={Letters}/>
+                    <Route exact path='/' component={Letters}/>
                 </Switch>
             </BrowserRouter>
         </main>
