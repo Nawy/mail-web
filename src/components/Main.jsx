@@ -4,7 +4,7 @@ import Letters from "./pages/Letters";
 import Choose from "../containers/Choose";
 import {Route, Switch} from "react-router-dom";
 
-const Router = (props) => {
+const CustomRouter = (props) => {
     //if (!props.isAuthorized) return <Choose/>;
     return (
         <main>
@@ -17,4 +17,4 @@ const Router = (props) => {
     );
 };
 
-export default Router;
+export default CustomRouter;

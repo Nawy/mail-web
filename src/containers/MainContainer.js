@@ -1,9 +1,9 @@
 import {connect} from "react-redux";
-import Router from "../components/Router";
+import Main from "../components/Main";
 import {withRouter} from "react-router-dom";
 
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = () => {
     return {
     }
 };
@@ -14,4 +14,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Router))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main))

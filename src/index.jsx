@@ -6,8 +6,7 @@ import {applyMiddleware, createStore} from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import logger from 'redux-logger'
 import reducers from './reducers'
-import App from './components/App'
-// import App from './components/App';
+import App from './containers/AppContainer'
 // style
 import 'bootstrap/dist/css/bootstrap.css';
 import './style/theme.scss';
