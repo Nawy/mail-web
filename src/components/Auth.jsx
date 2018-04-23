@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Loader from "../../util/Loader";
+import Loader from "../util/Loader";
 
 class Auth extends Component {
 
@@ -21,7 +21,7 @@ class Auth extends Component {
 
     render() {
         const authWithPassword = (
-            <div>
+            <div className="d-flex justify-content-end p-1">
                 <form className="form-inline row justify-content-center">
                     <input type="text"
                            className="form-control mb-2 mr-sm-2 mb-sm-0"

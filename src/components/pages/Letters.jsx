@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import LetterList from '../blocks/LetterList'
-import AddressList from '../blocks/AddressList'
+import LetterList from '../letters/LetterList'
+import AddressList from '../contacts/AddressList'
 import "../../style/letters.scss"
-import BoxSwitcher from "../blocks/BoxSwitcher";
+import BoxSwitcher from "../contacts/BoxSwitcher";
 
 const Letters = () => (
     <div className="container">
