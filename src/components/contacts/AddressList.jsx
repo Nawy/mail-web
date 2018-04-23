@@ -1,37 +1,14 @@
 import React from 'react';
-
+import Address from './Address'
+import RecipientAddress from './RecipientAddress'
 
 const AddressList = () => (
     <div className="card">
         <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-                example@example.com
-                <span className="badge badge-default badge-pill"><b>14</b></span>
-            </li>
-            <li className="list-group-item">
-                ex@example.com
-                <span className="badge badge-default badge-pill"><b>2345</b></span>
-            </li>
-            <li className="list-group-item">
-                cora@example.com
-                <span className="badge badge-default badge-pill"><b>11</b></span>
-            </li>
-            <li className="list-group-item">
-                oper@ya.ru
-                <span className="badge badge-default badge-pill"><b>1</b></span>
-            </li>
-            <li className="list-group-item">
-                papar@yup.ru
-                <span className="badge badge-default badge-pill"><b>0</b></span>
-            </li>
-            <li className="list-group-item">
-                satafarius.majahadishi@newdele.com
-                <span className="badge badge-default badge-pill"><b>23</b></span>
-            </li>
-            <li className="list-group-item">
-                ratatus@mail.fr
-                <span className="badge badge-default badge-pill"><b>1</b></span>
-            </li>
+            <RecipientAddress />
+            <Address address={{name: "ermolaev@live.ru", count: 34}} />
+            <Address address={{name: "ermolaev@live.ru", count: 34}} />
+            <Address address={{name: "ermolaev@live.ru", count: 34}} />
         </ul>
     </div>
 );
