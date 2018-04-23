@@ -1,13 +1,11 @@
 import React from 'react';
-import TextareaAutosize from 'react-autosize-textarea';
 import IncomingLetter from "./IncomingLetter";
 import OutcomingLetter from "./OutcomingLetter";
+import NewLetter from "./NewLetter";
 
 const LetterList = () => (
     <div>
-        <div className="letter-card">
-            <TextareaAutosize placeholder='Текст письма'/>
-        </div>
+        <NewLetter />
         <IncomingLetter letter={{
             from: "ermolaevym@gmail.com",
             text: `Yvonne Fletcher was fatally wounded on 17 April 1984 by a shot coming from the

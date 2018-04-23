@@ -1,13 +1,11 @@
-import React, {Component} from 'react';
-import ModeSwitcher from '../../containers/ModeSwithcer';
+import React from 'react';
 import Auth from "../../containers/Auth";
 
 
 const Header = (props) => {
         return (
-           <div className="container" style={{margin:"20px"}}>
+           <div className="container">
                <Auth style={{margin:"20px"}}/>
-               <ModeSwitcher style={{margin:"20px"}}/>
            </div>
         )
     };

@@ -22,7 +22,6 @@ class Auth extends Component {
     render() {
         const authWithPassword = (
             <div>
-                <h4 className="text-center">Авторизуйся USERNAME!</h4>
                 <form className="form-inline row justify-content-center">
                     <input type="text"
                            className="form-control mb-2 mr-sm-2 mb-sm-0"
