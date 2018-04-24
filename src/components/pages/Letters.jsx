@@ -3,13 +3,13 @@ import LetterList from '../letters/LetterList'
 import AddressList from '../contacts/AddressList'
 import "../../style/letters.scss"
 import BoxSwitcher from "../contacts/BoxSwitcher";
+import Auth from "../../containers/Auth";
 
-const Letters = () => (
+const Letters = (props) => (
     <div className="container">
         <div className="row justify-content-center">
             <div className="left-main-col">
-                <BoxSwitcher />
-                <AddressList/>
+                {props.isAuthorized ? <AddressList/> : <Auth/>}
             </div>
             <div className="right-main-col">
                 <LetterList/>

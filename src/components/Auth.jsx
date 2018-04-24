@@ -21,20 +21,21 @@ class Auth extends Component {
 
     render() {
         const authWithPassword = (
-            <div className="d-flex justify-content-end p-1">
-                <form className="form-inline row justify-content-center">
+            <div className="letter-card">
+                <form className="form-group">
                     <input type="text"
-                           className="form-control mb-2 mr-sm-2 mb-sm-0"
-                           placeholder="Ваш логин"
+                           className="form-control"
+                           placeholder="login@"
                            onChange={this.changeUsername}/>
                     <input type="password"
-                           className="form-control mb-2 mr-sm-2 mb-sm-0"
-                           placeholder="Каков пароль?"
+                           className="form-control"
+                           placeholder="password"
                            onChange={this.changePassword}/>
                     <button type="submit"
-                            className="btn btn-primary"
+                            className="button"
                             disabled={!this.state.username || !this.state.password}
-                            onClick={this.submit}>OK
+                            onClick={this.submit}>
+                        Log In
                     </button>
                 </form>
                 {
