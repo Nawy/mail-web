@@ -6,7 +6,8 @@ const api = {
     GET_CHAT_NAMES: userName => `/user/${userName}/chats`,
     GET_CHAT_MESSAGES: (userName,chatName) => `/user/${userName}/chat/${chatName}`,
     GET_SESSION_USER_NAME: `/user`,
-    LOGIN: '/login'
+    LOGIN: '/login',
+    CREATE_NEW_USER: '/user'
 };
 
 export default api;

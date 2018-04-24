@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import LetterList from '../letters/LetterList'
 import AddressList from '../contacts/AddressList'
 import "../../style/letters.scss"
-import BoxSwitcher from "../contacts/BoxSwitcher";
-import Auth from "../../containers/Auth";
+import Auth from "../../containers/AuthContainer";
 
 const Letters = (props) => (
     <div className="container">

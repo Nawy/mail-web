@@ -25,6 +25,13 @@ export const apiPost = (url, data, success, fail) => {
         .send(data)
         .end((err, res) => {errorProcessing(err,res,success,fail)})
 };
+export const apiPostJson = (url, data, success, fail) => {
+    request
+        .post(api.URL + url)
+        .set('Content-Type', 'application/json')
+        .send(data)
+        .end((err, res) => {errorProcessing(err,res,success,fail)})
+};
 
 export const loginPost = (login, password, success, fail) => {
     request

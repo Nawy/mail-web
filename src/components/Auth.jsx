@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import isNull from 'lodash/isNull'
 import Loader from "../util/Loader";
 
 class Auth extends Component {
@@ -9,13 +10,40 @@ class Auth extends Component {
         this.props.getSessionUserName();
     }
 
-    changeUsername = (event) => this.setState({username: event.target.value});
+    changeUsername = (event) => {
+        this.setState({username: event.target.value});
+        if(this.state.username.length > 1) {
+            this.props.checkUserName(event.target.value);
+        }
+    };
 
     changePassword = (event) => this.setState({password: event.target.value});
 
     submit = (event) => {
         event.preventDefault();
-        this.props.login(this.state.username, this.state.password);
+        if(this.state.isLoginExists) {
+            this.props.login(this.state.username, this.state.password);
+        } else {
+            this.props.createNewUser(this.state.username, this.state.password);
+        }
+    };
+
+    getAuthButtonName = () => {
+        if (this.state.username === "") {
+            return "New or Auth"
+        }
+
+        if (this.state.isLoginExists) {
+            return "Already exists, just log in"
+        }
+
+        if (this.state.username.length < 3) {
+            return "Continue write name";
+        } else if (this.state.password.length < 6) {
+            return "Write password for new user"
+        }
+
+        return "Create new!";
     };
 
 
@@ -35,7 +63,7 @@ class Auth extends Component {
                             className="button"
                             disabled={!this.state.username || !this.state.password}
                             onClick={this.submit}>
-                        Log In
+                        {this.getAuthButtonName()}
                     </button>
                 </form>
                 {
