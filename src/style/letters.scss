@@ -1,5 +1,9 @@
 @import "theme";
 
+.button {
+  @extend .btn, .btn-light, .btn-sm;
+  border-radius: 25px;
+}
 
 .letter-card {
   @extend .card;

@@ -5,7 +5,7 @@ const NewLetter = () => {
     return (
         <div className="letter-card">
             <TextareaAutosize placeholder='Текст письма'/>
-            <button type="button" className="btn btn-primary btn-sm">Send</button>
+            <button type="button" className="button">Send</button>
         </div>
     );
 };
