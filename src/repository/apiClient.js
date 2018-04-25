@@ -16,21 +16,18 @@ export const apiGet = (url, params, success, fail) => {
     return request
         .get(api.URL + url)
         .query(params)
-        .end((err, res) => {errorProcessing(err,res,success,fail)})
+        .end((err, res) => {
+            errorProcessing(err, res, success, fail)
+        })
 };
 
 export const apiPost = (url, data, success, fail) => {
     request
         .post(api.URL + url)
         .send(data)
-        .end((err, res) => {errorProcessing(err,res,success,fail)})
-};
-export const apiPostJson = (url, data, success, fail) => {
-    request
-        .post(api.URL + url)
-        .set('Content-Type', 'application/json')
-        .send(data)
-        .end((err, res) => {errorProcessing(err,res,success,fail)})
+        .end((err, res) => {
+            errorProcessing(err, res, success, fail)
+        })
 };
 
 export const loginPost = (login, password, success, fail) => {
@@ -38,5 +35,7 @@ export const loginPost = (login, password, success, fail) => {
         .post(api.URL + api.LOGIN)
         .type('form')
         .send({name: login, password: password})
-        .end((err, res) => {errorProcessing(err,res,success,fail)})
+        .end((err, res) => {
+            errorProcessing(err, res, success, fail)
+        })
 };
