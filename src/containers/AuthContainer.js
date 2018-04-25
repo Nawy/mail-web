@@ -1,6 +1,7 @@
 import {connect} from "react-redux";
 import {getSessionUserNameAction, loginAction} from "../actions/auth";
 import Auth from "../components/Auth";
+import isNull from 'lodash/isNull'
 import {checkUserName, createNewUser} from "../actions/users";
 
 
@@ -14,10 +15,11 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const mapStateToProps = (state) => {
+    console.info("Res: " + isNull(state.userName.error));
     return {
         sessionNameState: state.sessionUserName,
-        isLoginError: state.login.error !== null,
-        isLoginExists: state.checkUserName.error === null
+        isLoginError: !isNull(state.login.error),
+        isLoginExists: isNull(state.userName.error)
     }
 };
 

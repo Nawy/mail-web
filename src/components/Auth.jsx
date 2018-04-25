@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import isNull from 'lodash/isNull'
 import Loader from "../util/Loader";
 
 class Auth extends Component {
@@ -21,7 +20,7 @@ class Auth extends Component {
 
     submit = (event) => {
         event.preventDefault();
-        if(this.state.isLoginExists) {
+        if(this.props.isLoginExists) {
             this.props.login(this.state.username, this.state.password);
         } else {
             this.props.createNewUser(this.state.username, this.state.password);
@@ -33,7 +32,7 @@ class Auth extends Component {
             return "New or Auth"
         }
 
-        if (this.state.isLoginExists) {
+        if (this.props.isLoginExists) {
             return "Already exists, just log in"
         }
 

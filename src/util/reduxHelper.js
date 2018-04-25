@@ -3,7 +3,7 @@ import {deleteSessionCookie} from "./sessionHolder";
 
 function removeSessionCookieIfStatusUnauthorized(error){
     console.log(error);
-    if (error.status == 401) deleteSessionCookie();
+    if (error.status === 401) deleteSessionCookie();
 }
 
 export const commonGetAction = (url, params, actionName) => {
