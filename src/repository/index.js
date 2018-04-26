@@ -1,6 +1,6 @@
 
 const api = {
-    URL: 'http://localhost:3000/api',
+    URL: '/api',
 
     CHECK_USER_NAME: userName => `/user/${userName}/name`,
     GET_CHAT_NAMES: userName => `/user/${userName}/chats`,
