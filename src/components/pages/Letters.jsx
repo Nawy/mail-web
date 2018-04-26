@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import LetterList from '../letters/LetterList'
-import AddressList from '../contacts/AddressList'
+import AddressList from '../../containers/AddressListContainer'
 import "../../style/letters.scss"
 import Auth from "../../containers/AuthContainer";
 

@@ -1,11 +1,10 @@
 import {combineReducers} from 'redux'
 import {commonReducer, commonReducerFlex} from "../util/reduxHelper";
-import {createUserSuccessReducer} from "./createUser";
 import actionTypes from '../actions/actionTypes'
 
 const rootReducer = combineReducers({
     login: (state, action) => commonReducer(actionTypes.LOGIN, action, state),
-    createNewUser: (state, action) => commonReducerFlex()(createUserSuccessReducer)()(actionTypes.CREATE_NEW_USER, action, state),
+    createNewUser: (state, action) => commonReducer(actionTypes.CREATE_NEW_USER, action, state),
     userName: (state, action) => commonReducer(actionTypes.CHECK_USER_NAME, action, state),
     sessionUserName: (state, action) => commonReducer(actionTypes.GET_SESSION_USER_NAME, action, state),
     getChatNames: (state, action) => commonReducer(actionTypes.GET_CHAT_NAMES, action, state),

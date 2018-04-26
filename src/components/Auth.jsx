@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import isNull from 'lodash/isNull'
 import Loader from "../util/Loader";
 
 class Auth extends Component {
@@ -27,6 +28,12 @@ class Auth extends Component {
         }
     };
 
+    isLogin = () => {
+        if (this.props.isUserCreated && !this.props.isAuthorized) {
+            this.props.login(this.state.username, this.state.password);
+        }
+    };
+
     getAuthButtonName = () =>
         this.state.username === "" ? "New or Auth"
             : this.props.isLoginExists ? "Already exists, just log in"
@@ -36,8 +43,9 @@ class Auth extends Component {
 
 
     render() {
-        const authWithPassword = (
+        return (
             <div className="letter-card">
+                {this.isLogin()}
                 <form className="form-group">
                     <input type="text"
                            className="form-control"
@@ -61,16 +69,6 @@ class Auth extends Component {
                 }
             </div>
         );
-
-        const sessionNameState = this.props.sessionNameState;
-        if (sessionNameState.isLoading) return <Loader width={50} height={50}/>;
-        const isNotAuthorized = sessionNameState.data === null;
-        if (isNotAuthorized) {
-            return authWithPassword;
-        }
-        const username = sessionNameState.data.name;
-
-        return <h4 className="text-center">Hello {username}!</h4>;
     }
 }
 

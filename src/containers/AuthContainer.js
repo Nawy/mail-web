@@ -14,12 +14,17 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
+function checkIsUserCreated(state) {
+    return isNull(state.createNewUser.error) && !isNull(state.createNewUser.data);
+}
+
 const mapStateToProps = (state) => {
-    console.info("Res: " + isNull(state.userName.error));
     return {
         sessionNameState: state.sessionUserName,
+        isAuthorized: state.sessionUserName.data !== null,
         isLoginError: !isNull(state.login.error),
-        isLoginExists: isNull(state.userName.error)
+        isLoginExists: isNull(state.userName.error),
+        isUserCreated: checkIsUserCreated(state)
     }
 };
 
