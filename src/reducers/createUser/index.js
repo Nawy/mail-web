@@ -4,7 +4,8 @@ import {loginAction} from "../../actions/auth";
 const INITIAL_STATE = {
     isLoading: false,
     error: null,
-    data: null
+    data: null,
+    credentials: null
 };
 
 export const createUserReducer = (state = INITIAL_STATE, action) => {
