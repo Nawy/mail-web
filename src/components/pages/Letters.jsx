@@ -3,19 +3,32 @@ import LetterList from '../letters/LetterList'
 import AddressList from '../../containers/AddressListContainer'
 import "../../style/letters.scss"
 import Auth from "../../containers/AuthContainer";
+import {getSpamChatNames} from "../../actions/chats";
 
-const Letters = (props) => (
-    <div className="container">
-        <div className="row justify-content-center">
-            <div className="left-main-col">
-                {props.isAuthorized ? <AddressList/> : <Auth/>}
+class Letters extends Component {
+
+    constructor(props) {
+        super(props);
+        console.info(props);
+        //getSpamChatNames(props.session.name);
+    }
+
+    componentDidMount() {
+    }
+
+    render() {
+        return (<div className="container">
+            <div className="row justify-content-center">
+                <div className="left-main-col">
+                    {this.props.isAuthorized ? <AddressList/> : <Auth/>}
+                </div>
+                <div className="right-main-col">
+                    <LetterList/>
+                </div>
             </div>
-            <div className="right-main-col">
-                <LetterList/>
-            </div>
-        </div>
-    </div>
-);
+        </div>);
+    }
+}
 
 export default Letters;
 

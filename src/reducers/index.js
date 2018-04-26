@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import {commonReducer, commonReducerFlex} from "../util/reduxHelper";
+import {commonReducer} from "../util/reduxHelper";
 import actionTypes from '../actions/actionTypes'
 
 const rootReducer = combineReducers({

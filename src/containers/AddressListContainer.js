@@ -9,6 +9,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
     return {
         session: state.sessionUserName.data,
+        spamChats: state.getSpamChatNames.data
     }
 };
 
