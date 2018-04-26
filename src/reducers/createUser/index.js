@@ -1,24 +1,11 @@
-import actionTypes from '../../actions/actionTypes'
-import {loginAction} from "../../actions/auth";
-
 const INITIAL_STATE = {
     isLoading: false,
     error: null,
     data: null,
-    credentials: null
+    request: null
 };
 
-export const createUserReducer = (state = INITIAL_STATE, action) => {
-    if (action.type === actionTypes.CREATE_NEW_USER + '_STARTED') {
-        return {...state, isLoading: true, error: null};
-    }
-    if (action.type === actionTypes.CREATE_NEW_USER + '_SUCCESS') {
-        console.info(state);
-        //loginAction(state.)
-        return {...state, isLoading: false, data: action.payload, error: null};
-    }
-    if (action.type === actionTypes.CREATE_NEW_USER + '_FAILURE') {
-        return {...state, isLoading: false, data: null, error: action.payload};
-    }
-    return state;
+export const createUserSuccessReducer = (actionName, action, state = INITIAL_STATE) => {
+    console.info(state.request);
+    return {...state, isLoading: false, data: action.payload, error: null};
 };

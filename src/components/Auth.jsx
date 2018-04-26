@@ -11,7 +11,7 @@ class Auth extends Component {
 
     changeUsername = (event) => {
         this.setState({username: event.target.value});
-        if(this.state.username.length > 1) {
+        if (this.state.username.length > 1) {
             this.props.checkUserName(event.target.value);
         }
     };
@@ -20,30 +20,19 @@ class Auth extends Component {
 
     submit = (event) => {
         event.preventDefault();
-        if(this.props.isLoginExists) {
+        if (this.props.isLoginExists) {
             this.props.login(this.state.username, this.state.password);
         } else {
             this.props.createNewUser(this.state.username, this.state.password);
         }
     };
 
-    getAuthButtonName = () => {
-        if (this.state.username === "") {
-            return "New or Auth"
-        }
-
-        if (this.props.isLoginExists) {
-            return "Already exists, just log in"
-        }
-
-        if (this.state.username.length < 3) {
-            return "Continue write name";
-        } else if (this.state.password.length < 6) {
-            return "Write password for new user"
-        }
-
-        return "Create new!";
-    };
+    getAuthButtonName = () =>
+        this.state.username === "" ? "New or Auth"
+            : this.props.isLoginExists ? "Already exists, just log in"
+            : this.state.username.length < 3 ? "Continue write name"
+                : this.state.password.length < 6 ? "Write password for new user"
+                    : "Create new!";
 
 
     render() {
