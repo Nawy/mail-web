@@ -3,7 +3,6 @@ import LetterList from '../letters/LetterList'
 import AddressList from '../../containers/AddressListContainer'
 import "../../style/letters.scss"
 import Auth from "../../containers/AuthContainer";
-import {getSpamChatNames} from "../../actions/chats";
 
 class Letters extends Component {
 
@@ -12,7 +11,7 @@ class Letters extends Component {
     }
 
     componentDidMount() {
-        getSpamChatNames(this.props.session.name);
+        this.props.getSpamChatNames(this.props.session.name);
     }
 
     render() {
