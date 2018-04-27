@@ -10,10 +10,6 @@ class Letters extends Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.getSpamChatNames(this.props.session.name);
-    }
-
     render() {
         return (<div className="container">
             <div className="row justify-content-center">
