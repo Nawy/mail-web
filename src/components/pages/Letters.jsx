@@ -9,11 +9,10 @@ class Letters extends Component {
 
     constructor(props) {
         super(props);
-        console.info(props);
-        //getSpamChatNames(props.session.name);
     }
 
     componentDidMount() {
+        getSpamChatNames(this.props.session.name);
     }
 
     render() {
