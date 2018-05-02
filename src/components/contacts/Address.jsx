@@ -6,13 +6,14 @@ class Address extends Component {
         super(props);
     }
 
-    getMailsFromAddress = () => {
-
+    getMailsFromAddress = (event) => {
+        event.preventDefault();
+        this.props.getChatMessages(this.props.address);
     };
 
     render() {
         return (
-            <button type="button" className="button" onClick={this.getMailsFromAddress}>{this.props.address}</button>
+            <button type="button" className="btn-address" onClick={this.getMailsFromAddress}>{this.props.address}</button>
         );
     }
 }

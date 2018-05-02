@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import isEmpty from 'lodash/isEmpty'
 import isNull from 'lodash/isNull'
-import Address from './Address'
+import Address from '../../containers/AddressContainer'
 import shortid from "shortid";
 import Loader from "../../util/Loader";
 
@@ -34,7 +34,7 @@ class AddressList extends Component {
 
     render() {
         return (
-            <div className="letter-card">
+            <div className="address-card">
                 <p>{this.props.session.name}@ermolaev.am</p>
                 {this.getAddresses(this.props.spamChatNames)}
             </div>);

@@ -8,5 +8,5 @@ export const getChatNames = (userName) =>
 export const getSpamChatNames = () =>
     commonGetAction(api.GET_SPAM_CHAT_NAMES, null, actionTypes.GET_SPAM_CHAT_NAMES);
 
-export const getChatMessages = (userName, chatName) =>
-    commonGetAction(api.GET_CHAT_MESSAGES(userName, chatName), null, actionTypes.GET_CHAT_MESSAGES);
+export const getChatMessages = (address) =>
+    commonGetAction(api.GET_CHAT_MESSAGES(address), null, actionTypes.GET_CHAT_MESSAGES);

@@ -1,9 +1,14 @@
 import React from 'react';
 import LetterBody from "./LetterBody";
 
-const IncomingLettter = ({letter}) => (
+const IncomingLettter = ({from, text, date}) => (
     <div className="letter-card">
-        <LetterBody letter={letter} />
+        {console.info("Date:" + date)}
+        <LetterBody
+            from={from}
+            text={text}
+            date={date}
+        />
     </div>
 );
 
