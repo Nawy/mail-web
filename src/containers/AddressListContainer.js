@@ -1,7 +1,8 @@
 import {connect} from "react-redux";
 import AddressList from "../components/contacts/AddressList";
+import isEmpty from "lodash/isEmpty"
+import shortid from "shortid"
 import {getSpamChatNames} from "../actions/chats";
-
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -12,7 +13,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
     return {
         session: state.sessionUserName.data,
-        spamChatNames: state.getSpamChatNames.data
+        spamChatNames: state.getSpamChatNames
     }
 };
 

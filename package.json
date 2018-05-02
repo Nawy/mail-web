@@ -34,6 +34,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^7.0.1",
+    "shortid": "^2.2.8",
     "superagent": "^3.8.2"
   },
   "devDependencies": {
