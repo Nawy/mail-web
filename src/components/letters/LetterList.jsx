@@ -1,11 +1,10 @@
 import React from 'react';
-import IncomingLetter from "./IncomingLetter";
-import OutcomingLetter from "./OutcomingLetter";
 import isNull from 'lodash/isNull'
 import isEmpty from 'lodash/isEmpty'
 import NewLetter from "./NewLetter";
 import Loader from "../../util/Loader";
 import shortid from "shortid";
+import Letter from "./Letter";
 
 const getMessagesWithIds = (messages) => messages.map((value) => {
     return {id: shortid.generate(), value: value}
@@ -15,11 +14,9 @@ const getMessagesOrEmpty = (messages) => isEmpty(messages) ?
     <p>Нет сообщений</p> :
     getMessagesWithIds(messages).map(
         message =>
-            <IncomingLetter
+            <Letter
                 key={message.id}
-                from={message.value.address}
-                text={message.value.text}
-                date={message.value.time}
+                letter={message}
             />
     );
 

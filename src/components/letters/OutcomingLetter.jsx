@@ -1,9 +1,12 @@
 import React from 'react';
 import LetterBody from "./LetterBody";
 
-const OutcomingLettter = ({letter}) => (
+const OutcomingLettter = ({from, text, date}) => (
     <div className="letter-card-sender">
-        <LetterBody letter={letter} />
+        <LetterBody from={from}
+                    text={text}
+                    date={date}
+        />
     </div>
 );
 
