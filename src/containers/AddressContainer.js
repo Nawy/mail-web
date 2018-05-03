@@ -1,10 +1,11 @@
 import {connect} from "react-redux";
 import Address from "../components/contacts/Address";
-import {getChatMessages} from "../actions/chats";
+import {chooseChat, getChatMessages} from "../actions/chats";
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getChatMessages: (address) => dispatch(getChatMessages(address))
+        getChatMessages: (address) => dispatch(getChatMessages(address)),
+        chooseChat: (address) => dispatch(chooseChat(address))
     }
 };
 

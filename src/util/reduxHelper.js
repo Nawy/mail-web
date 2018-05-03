@@ -39,8 +39,7 @@ export const commonPostAction = (url, request, actionName) => {
 const INITIAL_STATE = {
     isLoading: false,
     error: null,
-    data: null,
-    request: null
+    data: null
 };
 
 export const commonReducer = (actionName, action, state = INITIAL_STATE) => {

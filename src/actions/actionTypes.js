@@ -8,7 +8,8 @@ const actionTypes = {
     GET_CHAT_MESSAGES: null,
     GET_SESSION_USER_NAME: null,
     LOGIN: null,
-    CREATE_NEW_USER: null
+    CREATE_NEW_USER: null,
+    CHOOSE_CHAT: null
 };
 
 export default keyMirror(actionTypes);
