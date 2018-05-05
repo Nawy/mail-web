@@ -2,6 +2,7 @@ import keyMirror from 'keymirror'
 
 const actionTypes = {
 
+    SEND_LETTER: null,
     CHECK_USER_NAME:null,
     GET_CHAT_NAMES: null,
     GET_SPAM_CHAT_NAMES: null,

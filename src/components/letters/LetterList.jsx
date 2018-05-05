@@ -4,7 +4,7 @@ import isEmpty from 'lodash/isEmpty'
 import Loader from "../../util/Loader";
 import shortid from "shortid";
 import Letter from "./Letter";
-import ReplyForm from "./ReplyForm";
+import ReplyForm from "../../containers/ReplyFormContainer";
 
 const getMessagesWithIds = (messages) => messages.map((value) => {
     return {id: shortid.generate(), value: value}

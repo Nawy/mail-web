@@ -1,4 +1,5 @@
 import React from 'react';
+import DOMPurify from 'dompurify'
 import moment from 'moment';
 
 const Letter = ({from, text, date}) => (
@@ -15,7 +16,7 @@ const Letter = ({from, text, date}) => (
                 </span>
             </span>
         </div>
-        <p className="card-text">{text}</p>
+        <p className="card-text" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(text)}} />
     </div>
 );
 

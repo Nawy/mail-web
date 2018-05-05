@@ -6,8 +6,11 @@
 }
 
 .btn-address {
-  @extend .btn, .btn-light, .btn-sm, .my-1;
-  border-radius: 25px;
+  @extend .btn, .btn-light, .btn-sm, .my-1, .text-left;
+}
+
+.btn-address-selected {
+  @extend .btn, .btn-primary, .btn-sm, .my-1, .text-left;
 }
 
 .address-card {
