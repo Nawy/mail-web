@@ -1,23 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
-import { AppContainer } from 'react-hot-loader'
+import {Provider} from 'react-redux'
+import {AppContainer} from 'react-hot-loader'
 import {applyMiddleware, createStore} from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import logger from 'redux-logger'
 import reducers from './reducers'
-import {testMiddleware} from "./middleware/testMiddleware";
-import App from './containers/app';
+import App from './containers/AppContainer'
+// style
 import 'bootstrap/dist/css/bootstrap.css';
+import './style/theme.scss';
 
-let middleware = [thunkMiddleware, logger, testMiddleware];
+let middleware = [thunkMiddleware, logger];
 const defaultStore = {};
 const store = createStore(reducers, defaultStore, applyMiddleware(...middleware));
 
 ReactDOM.render(
     <Provider store={store}>
         <AppContainer>
-            <App />
+            <App/>
         </AppContainer>
     </Provider>,
     document.getElementById("root")

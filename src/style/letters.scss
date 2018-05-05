@@ -1,0 +1,44 @@
+@import "theme";
+
+.button {
+  @extend .btn, .btn-light, .btn-sm;
+  border-radius: 25px;
+}
+
+.btn-address {
+  @extend .btn, .btn-light, .btn-sm, .my-1, .text-left;
+}
+
+.btn-address-selected {
+  @extend .btn, .btn-primary, .btn-sm, .my-1, .text-left;
+}
+
+.address-card {
+  @extend .card;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.user-card {
+  @extend .card;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+.letter-card {
+  @extend .card;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.letter-card-sender {
+  @extend .letter-card;
+  background-color: #F8F8F8;
+}
+
+.letter-card-header {
+  @extend .d-flex, .justify-content-end;
+}
