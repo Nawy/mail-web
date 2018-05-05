@@ -18,10 +18,6 @@ class Settings extends Component {
         this.props.logout();
     };
 
-    componentDidMount() {
-        this.props.isLogout && this.props.getSessionUserName()
-    }
-
     render() {
         return (
             <div>

@@ -35,11 +35,12 @@ class Auth extends Component {
     };
 
     getAuthButtonName = () =>
-        this.state.username === "" ? "New or Auth"
-            : this.props.isLoginExists ? "Already exists, just log in"
-            : this.state.username.length < 3 ? "Continue write name"
-                : this.state.password.length < 6 ? "Write password for new user"
-                    : "Create new!";
+        this.state.username === "" ? "Войти или создать"
+            : this.props.isLoginExists ?
+                this.state.password.length < 6 ? "Уже существует, введите пароль" : "Войти"
+            : this.state.username.length < 3 ? "Продолжайте вводить имя"
+                : this.state.password.length < 6 ? "Пароль для нового"
+                    : "Создать!";
 
 
     render() {

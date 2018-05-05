@@ -54,37 +54,3 @@ export const commonReducer = (actionName, action, state = INITIAL_STATE) => {
     }
     return state;
 };
-
-const startedReducer = (actionName, action, state = INITIAL_STATE) => {
-    return {...state, isLoading: true, error: null};
-};
-
-const successReducer = (actionName, action, state = INITIAL_STATE) => {
-    return {...state, isLoading: false, data: action.payload, error: null};
-};
-
-const failureReducer = (actionName, action, state = INITIAL_STATE) => {
-    return {...state, isLoading: false, data: action.payload, error: null};
-};
-
-export const commonReducerFlex =
-    (started = startedReducer) => {
-        return (success = successReducer) => {
-            return (failure = failureReducer) => {
-                return (actionName, action, state = INITIAL_STATE) => {
-                    if (action.type === actionName + '_STARTED') {
-                        started(actionName, action, state);
-                    }
-                    if (action.type === actionName + '_SUCCESS') {
-                        success(actionName, action, state);
-                    }
-                    if (action.type === actionName + '_FAILURE') {
-                        failure(actionName, action, state);
-                    }
-                    return state;
-                }
-            }
-        }
-    }
-
-;

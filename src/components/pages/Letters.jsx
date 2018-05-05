@@ -18,7 +18,7 @@ class Letters extends Component {
                     {this.props.isAuthorized ? <AddressList/> : <Auth/>}
                 </div>
                 <div className="right-main-col">
-                    {this.props.isSettings ? <Settings /> : <LetterList/>}
+                    {this.props.isSettings && this.props.isAuthorized ? <Settings /> : <LetterList/>}
                 </div>
             </div>
         </div>);

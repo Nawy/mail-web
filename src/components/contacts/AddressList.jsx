@@ -21,7 +21,7 @@ class AddressList extends Component {
     });
 
     getAddressesOrEmpty = (data) =>
-        isEmpty(data) ? <h4>Пусто</h4> :
+        isEmpty(data) ? <p className="text-center">Нет контактов</p>  :
             this.getAddressesWithIds(data)
                 .map((value) => <Address key={value.id} address={value.value}/>);
 

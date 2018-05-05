@@ -9,15 +9,9 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-const getIsLogout = (data) => {
-    console.info(data);
-    return false;
-};
-
 const mapStateToProps = (state) => {
     return {
-        session: state.sessionUserName.data,
-        isLogout: getIsLogout(state.logout.data)
+        session: state.userSession.data
     }
 };
 

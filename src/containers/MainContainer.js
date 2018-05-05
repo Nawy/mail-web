@@ -10,7 +10,7 @@ const mapDispatchToProps = () => {
 
 const mapStateToProps = (state) => {
     return {
-        isAuthorized: state.sessionUserName.data !== null
+        isAuthorized: state.userSession.data !== null
     }
 };
 

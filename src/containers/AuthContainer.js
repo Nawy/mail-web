@@ -20,8 +20,8 @@ function checkIsUserCreated(state) {
 
 const mapStateToProps = (state) => {
     return {
-        sessionNameState: state.sessionUserName,
-        isAuthorized: state.sessionUserName.data !== null,
+        sessionNameState: state.userSession,
+        isAuthorized: state.userSession.data !== null,
         isLoginError: !isNull(state.login.error),
         isLoginExists: isNull(state.userName.error),
         isUserCreated: checkIsUserCreated(state)
