@@ -4,6 +4,7 @@ import isNull from 'lodash/isNull'
 import Address from '../../containers/AddressContainer'
 import shortid from "shortid";
 import Loader from "../../util/Loader";
+import UserInfo from "../user/UserInfo";
 
 class AddressList extends Component {
 
@@ -31,13 +32,32 @@ class AddressList extends Component {
     getAddresses = (value) =>
         isNull(value) ? "" : this.getAddressesOrLoading(value);
 
+    handleClickSettings = (event) => {
+        event.preventDefault();
+        this.props.chooseMenu();
+    };
+
+    userInfo = (
+        <button type="button" className="btn-address" onClick={this.handleClickSettings}>
+            <UserInfo userName={this.props.session.name}/>
+        </button>
+    );
+
+    userInfoSelected = (
+        <button type="button" className="btn-address-selected">
+            <UserInfo userName={this.props.session.name}/>
+        </button>
+    );
+
+    getUserInfo = () => this.props.isSettings ? this.userInfoSelected : this.userInfo;
 
     render() {
         return (
             <div className="address-card">
-                <p>{this.props.session.name}@ermolaev.am</p>
+                {this.getUserInfo()}
                 {this.getAddresses(this.props.spamChatNames)}
-            </div>);
+            </div>
+        );
     }
 }
 

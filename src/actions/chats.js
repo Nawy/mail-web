@@ -2,8 +2,8 @@ import actionTypes from '../actions/actionTypes'
 import api from "../repository/index";
 import {commonGetAction, commonPostAction} from "../util/reduxHelper";
 
-export const chooseChat = (address) => {
-    return {type: actionTypes.CHOOSE_CHAT, payload: address}
+export const chooseMenu = (address, isSettings) => {
+    return {type: actionTypes.CHOOSE_MENU, payload: {address: address, isSettings: isSettings}}
 };
 
 export const sendLetter = (address, text) =>

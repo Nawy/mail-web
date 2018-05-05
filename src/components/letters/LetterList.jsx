@@ -11,7 +11,7 @@ const getMessagesWithIds = (messages) => messages.map((value) => {
 });
 
 const getMessagesOrEmpty = (messages) => isEmpty(messages) ?
-    <p>Нет сообщений</p> :
+    <p className="text-center">Нет сообщений</p> :
     getMessagesWithIds(messages).map(
         message =>
             <Letter
@@ -26,8 +26,8 @@ const getMessages = (messages) => isNull(messages) ? "" : getMessagesOrLoader(me
 
 const LetterList = ({messages}) => (
     <div>
-        <ReplyForm />
         {getMessages(messages)}
+        <ReplyForm />
     </div>
 );
 

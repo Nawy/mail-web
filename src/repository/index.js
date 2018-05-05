@@ -9,6 +9,7 @@ const api = {
     GET_CHAT_MESSAGES: (address) => `/mailbox/${address}`,
     GET_SESSION_USER_NAME: `/user`,
     LOGIN: '/login',
+    LOGOUT: '/logout',
     CREATE_NEW_USER: '/user'
 };
 

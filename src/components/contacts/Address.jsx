@@ -10,7 +10,7 @@ class Address extends Component {
     getMailsFromAddress = (event) => {
         event.preventDefault();
         this.props.getChatMessages(this.props.address);
-        this.props.chooseChat(this.props.address);
+        this.props.chooseMenu(this.props.address);
     };
 
     commonButton = <button type="button" className="btn-address"

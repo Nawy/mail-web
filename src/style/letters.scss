@@ -20,6 +20,13 @@
   margin-bottom: 10px;
 }
 
+.user-card {
+  @extend .card;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
 .letter-card {
   @extend .card;
   border: none;

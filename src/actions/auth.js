@@ -1,6 +1,6 @@
 import actionTypes from '../actions/actionTypes'
 import api from "../repository/index";
-import {commonGetAction} from "../util/reduxHelper";
+import {commonGetAction, commonPostAction} from "../util/reduxHelper";
 import {loginPost} from "../repository/apiClient";
 
 export const getSessionUserNameAction =
@@ -19,3 +19,6 @@ export const loginAction =
             error => dispatch({type: actionName + '_FAILURE', payload: error, error: true})
         )
     };
+
+export const logoutAction =
+    () => commonPostAction(api.LOGOUT, null, actionTypes.LOGOUT);
