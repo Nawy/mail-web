@@ -9,6 +9,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
     return {
         isAuthorized: !isNull(state.userSession.data),
+        newLetterForm: state.newLetterForm,
         session: state.userSession.data,
         messages: state.getChatMessages
     }

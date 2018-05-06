@@ -4,7 +4,6 @@ import isNull from 'lodash/isNull'
 import Address from '../../containers/AddressContainer'
 import shortid from "shortid";
 import Loader from "../../util/Loader";
-import UserInfo from "../user/UserInfo";
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 
@@ -40,13 +39,13 @@ class AddressList extends Component {
     };
 
     userInfo = (
-        <button type="button" className="btn-userinfo" onClick={this.handleClickSettings}>
+        <button type="button" className="btn-rounded btn-block" onClick={this.handleClickSettings}>
             <FontAwesomeIcon icon={faBars}/> {this.props.session.name}
         </button>
     );
 
     userInfoSelected = (
-        <button type="button" className="btn-userinfo-selected">
+        <button type="button" className="btn-rounded-selected btn-block">
             <FontAwesomeIcon icon={faBars}/> {this.props.session.name}
         </button>
     );

@@ -13,13 +13,13 @@
   @extend .btn, .btn-primary, .btn-sm, .my-1, .text-left;
 }
 
-.btn-userinfo {
-  @extend .btn, .btn-light, .btn-block, .btn-sm, .mb-2;
+.btn-rounded {
+  @extend .btn, .btn-light, .btn-sm, .mb-2;
   border-radius: 25px;
 }
 
-.btn-userinfo-selected {
-  @extend .btn, .btn-primary, .btn-block, .btn-sm, .mb-2;
+.btn-rounded-selected {
+  @extend .btn, .btn-primary, .btn-sm, .mb-2;
   border-radius: 25px;
 }
 
@@ -48,9 +48,4 @@
 
 .letter-card-header {
   @extend .d-flex, .justify-content-end;
-}
-
-.btn-letter {
-  @extend .btn, .btn-light, .btn-sm, .mb-2, .ml-1, .text-left;
-  border-radius: 25px;
 }
