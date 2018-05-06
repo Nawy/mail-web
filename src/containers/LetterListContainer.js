@@ -1,4 +1,5 @@
 import {connect} from "react-redux";
+import isNull from 'lodash/isNull'
 import LetterList from "../components/letters/LetterList";
 
 const mapDispatchToProps = (dispatch) => {
@@ -7,6 +8,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
     return {
+        isAuthorized: !isNull(state.userSession.data),
         session: state.userSession.data,
         messages: state.getChatMessages
     }

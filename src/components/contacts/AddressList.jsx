@@ -5,6 +5,8 @@ import Address from '../../containers/AddressContainer'
 import shortid from "shortid";
 import Loader from "../../util/Loader";
 import UserInfo from "../user/UserInfo";
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 
 class AddressList extends Component {
 
@@ -21,7 +23,7 @@ class AddressList extends Component {
     });
 
     getAddressesOrEmpty = (data) =>
-        isEmpty(data) ? <p className="text-center">Нет контактов</p>  :
+        isEmpty(data) ? <p className="text-center">Нет контактов</p> :
             this.getAddressesWithIds(data)
                 .map((value) => <Address key={value.id} address={value.value}/>);
 
@@ -38,14 +40,14 @@ class AddressList extends Component {
     };
 
     userInfo = (
-        <button type="button" className="btn-address" onClick={this.handleClickSettings}>
-            <UserInfo userName={this.props.session.name}/>
+        <button type="button" className="btn-userinfo" onClick={this.handleClickSettings}>
+            <FontAwesomeIcon icon={faBars}/> {this.props.session.name}
         </button>
     );
 
     userInfoSelected = (
-        <button type="button" className="btn-address-selected">
-            <UserInfo userName={this.props.session.name}/>
+        <button type="button" className="btn-userinfo-selected">
+            <FontAwesomeIcon icon={faBars}/> {this.props.session.name}
         </button>
     );
 
@@ -53,9 +55,11 @@ class AddressList extends Component {
 
     render() {
         return (
-            <div className="address-card">
+            <div>
                 {this.getUserInfo()}
-                {this.getAddresses(this.props.spamChatNames)}
+                <div className="address-card">
+                    {this.getAddresses(this.props.spamChatNames)}
+                </div>
             </div>
         );
     }

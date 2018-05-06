@@ -13,11 +13,20 @@
   @extend .btn, .btn-primary, .btn-sm, .my-1, .text-left;
 }
 
+.btn-userinfo {
+  @extend .btn, .btn-light, .btn-block, .btn-sm, .mb-2;
+  border-radius: 25px;
+}
+
+.btn-userinfo-selected {
+  @extend .btn, .btn-primary, .btn-block, .btn-sm, .mb-2;
+  border-radius: 25px;
+}
+
+
 .address-card {
-  @extend .card;
+  @extend .card, .mb-2, .p-2;
   border: none;
-  padding: 10px;
-  margin-bottom: 10px;
 }
 
 .user-card {
@@ -28,10 +37,8 @@
 }
 
 .letter-card {
-  @extend .card;
+  @extend .card, .mb-2, .p-2;
   border: none;
-  padding: 10px;
-  margin-bottom: 10px;
 }
 
 .letter-card-sender {
@@ -41,4 +48,9 @@
 
 .letter-card-header {
   @extend .d-flex, .justify-content-end;
+}
+
+.btn-letter {
+  @extend .btn, .btn-light, .btn-sm, .mb-2, .ml-1, .text-left;
+  border-radius: 25px;
 }

@@ -4,7 +4,8 @@ import isEmpty from 'lodash/isEmpty'
 import Loader from "../../util/Loader";
 import shortid from "shortid";
 import Letter from "./Letter";
-import ReplyForm from "../../containers/ReplyFormContainer";
+import NewLetter from "./NewLetter";
+import LetterButtonGroup from "./LetterButtonGroup";
 
 const getMessagesWithIds = (messages) => messages.map((value) => {
     return {id: shortid.generate(), value: value}
@@ -24,10 +25,11 @@ const getMessagesOrLoader = (messages) => messages.isLoading ? <Loader /> : getM
 
 const getMessages = (messages) => isNull(messages) ? "" : getMessagesOrLoader(messages);
 
-const LetterList = ({messages}) => (
+const LetterList = ({isAuthorized, messages}) => (
     <div>
-        {getMessages(messages)}
-        <ReplyForm />
+        {isAuthorized && <LetterButtonGroup />}
+        {isAuthorized && getMessages(messages)}
+        {!isAuthorized && <NewLetter />}
     </div>
 );
 
