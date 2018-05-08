@@ -22,6 +22,9 @@ const rootReducer = (state, action) => {
     if (action.type === 'LOGOUT_SUCCESS') {
         state = undefined
     }
+    if (action.type.substr(action.type.length - 8) === "_FAILURE") {
+        state = undefined
+    }
 
     return appReducer(state, action)
 };
