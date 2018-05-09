@@ -1,4 +1,5 @@
 import {connect} from "react-redux";
+import isNull from 'lodash/isNull'
 import {showNewLetterForm, showReplyForm, hideAllWriteLetterForms} from '../actions/newLetters'
 import LetterButtonGroup from "../components/letters/LetterButtonGroup";
 
@@ -12,7 +13,8 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
     return {
-        newLetterForm: state.newLetterForm
+        newLetterForm: state.newLetterForm,
+        isEmailSelected: !isNull(state.chooseMenu.address)
     }
 };
 

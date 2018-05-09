@@ -11,8 +11,9 @@ const mapStateToProps = (state) => {
         isAuthorized: !isNull(state.userSession.data),
         newLetterForm: state.newLetterForm,
         session: state.userSession.data,
-        messages: state.getChatMessages,
-        isSettings: state.chooseMenu.isSettings
+        messages: state.messages,
+        isSettings: state.chooseMenu.isSettings,
+        isEmailSelected: !isNull(state.chooseMenu.address)
     }
 };
 

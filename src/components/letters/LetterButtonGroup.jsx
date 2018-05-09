@@ -14,12 +14,14 @@ const LetterButtonGroup = (props) => (
             onClick={props.showNewLetterForm}>
             <FontAwesomeIcon icon={faPencilAlt}/> Новое сообщение
         </button>
-        <button
-            type="button"
-            className={getButtonTypeClass(props.newLetterForm.isReply)}
-            onClick={props.showReplyForm}>
-            <FontAwesomeIcon icon={faReply}/> Ответить
-        </button>
+        {props.isEmailSelected &&
+            <button
+                type="button"
+                className={getButtonTypeClass(props.newLetterForm.isReply)}
+                onClick={props.showReplyForm}>
+                <FontAwesomeIcon icon={faReply}/> Ответить
+            </button>
+        }
         {
             (props.newLetterForm.isNewLetter || props.newLetterForm.isReply) &&
             <button

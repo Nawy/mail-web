@@ -1,6 +1,6 @@
 import React from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
-import RecipientAddress from "../contacts/RecipientAddress";
+import RecipientAddress from "../../contacts/RecipientAddress";
 
 const NewLetter = () => {
     return (

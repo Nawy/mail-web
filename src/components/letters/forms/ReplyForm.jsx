@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
 
-class ReplyForm extends Component {
+class AuthNewLetter extends Component {
     constructor(props) {
         super(props);
         this.state = {message: ""}
@@ -28,4 +28,4 @@ class ReplyForm extends Component {
     }
 }
 
-export default ReplyForm;
+export default AuthNewLetter;

@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {sendLetter} from '../actions/chats'
-import ReplyForm from "../components/letters/ReplyForm";
+import ReplyForm from "../components/letters/forms/ReplyForm";
 
 
 const mapDispatchToProps = (dispatch) => {
