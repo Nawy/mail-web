@@ -34,8 +34,11 @@
   padding: 5px;
 }
 
+.common-form-group {
+  @extend .form-group, .my-1
+}
+
 textarea, .form-control {
-  //font-family: 'EB Garamond', serif;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.1rem;
   color: #474747;

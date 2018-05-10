@@ -1,7 +1,7 @@
 import actionTypes from "../../actions/actionTypes";
 
 const INITIAL_STATE = {
-    isNewLetter: true,
+    isNewLetter: false,
     isReply: false
 };
 

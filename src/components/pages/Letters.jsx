@@ -3,7 +3,7 @@ import LetterList from '../../containers/LetterListContainer'
 import AddressList from '../../containers/AddressListContainer'
 import "../../style/letters.scss"
 import Auth from "../../containers/AuthContainer";
-import Settings from "../../containers/settings/SettingsContainer";
+import Greetings from '../common/Greeting'
 
 class Letters extends Component {
 
@@ -18,7 +18,7 @@ class Letters extends Component {
                     {this.props.isAuthorized ? <AddressList/> : <Auth/>}
                 </div>
                 <div className="right-main-col">
-                    <LetterList/>
+                    {this.props.isAuthorized ? <LetterList/> : <Greetings />}
                 </div>
             </div>
         </div>);

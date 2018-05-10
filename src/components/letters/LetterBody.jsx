@@ -1,6 +1,8 @@
 import React from 'react';
 import DOMPurify from 'dompurify'
 import moment from 'moment';
+import 'moment/locale/ru';
+moment.locale("ru");
 
 const Letter = ({from, text, date}) => (
     <div className="card-block">

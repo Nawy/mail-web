@@ -47,7 +47,7 @@ class Auth extends Component {
         return (
             <div className="letter-card">
                 {this.isLogin()}
-                <form className="form-group">
+                <form className="common-form-group">
                     <input type="text"
                            className="form-control"
                            placeholder="login@"
