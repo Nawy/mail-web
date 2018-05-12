@@ -3,12 +3,10 @@ import {commonReducer} from "../util/reduxHelper";
 import actionTypes from '../actions/actionTypes';
 
 // custom
-import chooseMenu from './chat'
 import messages from './messages'
 import newLetterForm from './newLetterForm'
 
 const appReducer = combineReducers({
-    chooseMenu,
     newLetterForm,
     messages,
     login: (state, action) => commonReducer(actionTypes.LOGIN, action, state),

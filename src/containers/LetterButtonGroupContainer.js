@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
     return {
         newLetterForm: state.newLetterForm,
-        isEmailSelected: !isNull(state.chooseMenu.address)
+        isEmailSelected: !isNull(state.messages.selectedAddress)
     }
 };
 

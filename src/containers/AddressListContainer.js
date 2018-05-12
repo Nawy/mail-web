@@ -1,11 +1,12 @@
 import {connect} from "react-redux";
 import AddressList from "../components/contacts/AddressList";
-import {chooseMenu, getSpamChatNames} from "../actions/chats";
+import {chooseMenu, getSpamChatNames, selectObject} from "../actions/chats";
 
 const mapDispatchToProps = (dispatch) => {
     return {
         getSpamChatNames: () => dispatch(getSpamChatNames()),
-        chooseMenu: () => dispatch(chooseMenu(null, true))
+        selectObjectSettings: () => dispatch(selectObject(null, true)),
+        unselectObjectSettings: () => dispatch(selectObject(null, false))
     }
 };
 
@@ -13,8 +14,8 @@ const mapStateToProps = (state) => {
     return {
         session: state.userSession.data,
         spamChatNames: state.getSpamChatNames,
-        address: state.chooseMenu.address,
-        isSettings: state.chooseMenu.isSettings
+        address: state.messages.selectedAddress,
+        isSettings: state.messages.isSelectedSettings
     }
 };
 

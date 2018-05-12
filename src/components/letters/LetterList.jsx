@@ -4,9 +4,9 @@ import isEmpty from 'lodash/isEmpty'
 import Loader from "../../util/Loader";
 import shortid from "shortid";
 import Letter from "./Letter";
-import NewLetter from "./forms/NewLetter";
+import NewLetter from "../../containers/NewLetterContainer";
 import LetterButtonGroup from "../../containers/LetterButtonGroupContainer";
-import ReplyForm from "./forms/ReplyForm";
+import ReplyForm from "../../containers/ReplyFormContainer";
 import Settings from "../../containers/settings/SettingsContainer";
 
 const getMessagesWithIds = (messages) => messages.map((value) => {
@@ -29,12 +29,12 @@ const getMessages = (messages) => isNull(messages) ? "" : getMessagesOrLoader(me
 
 const LetterList = ({isAuthorized, messages, newLetterForm, isSettings, isEmailSelected}) => (
     <div>
-        {isAuthorized && <LetterButtonGroup />}
-        {(isAuthorized && isSettings) && <Settings />}
+        <LetterButtonGroup />
+        {(isSettings) && <Settings />}
 
         {(newLetterForm.isNewLetter) && <NewLetter />}
-        {(isAuthorized && newLetterForm.isReply && isEmailSelected) && <ReplyForm />}
-        {(isAuthorized && !isSettings && isEmailSelected) && getMessages(messages)}
+        {(newLetterForm.isReply && isEmailSelected) && <ReplyForm />}
+        {(!isSettings && isEmailSelected) && getMessages(messages)}
     </div>
 );
 

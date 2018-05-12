@@ -12,7 +12,7 @@ const actionTypes = {
     LOGIN: null,
     LOGOUT: null,
     CREATE_NEW_USER: null,
-    CHOOSE_MENU: null,
+    SELECT_OBJECT: null,
 
     SHOW_NEW_LETTER_FORM: null,
     SHOW_REPLY_LETTER_FORM: null,

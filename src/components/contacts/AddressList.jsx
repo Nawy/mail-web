@@ -35,7 +35,11 @@ class AddressList extends Component {
 
     handleClickSettings = (event) => {
         event.preventDefault();
-        this.props.chooseMenu();
+        if (this.props.isSettings) {
+            this.props.unselectObjectSettings();
+        } else {
+            this.props.selectObjectSettings();
+        }
     };
 
     userInfo = (
@@ -45,7 +49,7 @@ class AddressList extends Component {
     );
 
     userInfoSelected = (
-        <button type="button" className="btn-rounded-selected btn-block">
+        <button type="button" className="btn-rounded-selected btn-block" onClick={this.handleClickSettings}>
             <FontAwesomeIcon icon={faBars}/> {this.props.session.name}
         </button>
     );

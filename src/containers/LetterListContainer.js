@@ -12,8 +12,8 @@ const mapStateToProps = (state) => {
         newLetterForm: state.newLetterForm,
         session: state.userSession.data,
         messages: state.messages,
-        isSettings: state.chooseMenu.isSettings,
-        isEmailSelected: !isNull(state.chooseMenu.address)
+        isSettings: state.messages.isSelectedSettings,
+        isEmailSelected: !isNull(state.messages.selectedAddress)
     }
 };
 

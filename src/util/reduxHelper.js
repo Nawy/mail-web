@@ -23,7 +23,7 @@ export const commonGetAction = (url, requestParams, actionName) => {
 
 export const commonPostAction = (url, request, actionName) => {
     return dispatch => {
-        dispatch({type: actionName + '_STARTED'});
+        dispatch({type: actionName + '_STARTED', request: request});
         apiPost(
             url,
             request,

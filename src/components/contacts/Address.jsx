@@ -10,7 +10,7 @@ class Address extends Component {
     getMailsFromAddress = (event) => {
         event.preventDefault();
         this.props.getChatMessages(this.props.address);
-        this.props.chooseMenu(this.props.address);
+        this.props.selectObject(this.props.address);
     };
 
     commonButton = <button type="button" className="btn-address"
@@ -24,7 +24,6 @@ class Address extends Component {
 
     getSelectedOrCommonButton = (address, selectedAddress) =>
         address === selectedAddress ? this.selectedButton : this.commonButton;
-
 
     render() {
         return this.getButton(this.props.address, this.props.selectedAddress);

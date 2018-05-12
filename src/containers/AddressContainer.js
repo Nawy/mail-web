@@ -1,18 +1,18 @@
 import {connect} from "react-redux";
 import Address from "../components/contacts/Address";
-import {chooseMenu, getChatMessages} from "../actions/chats";
+import {getChatMessages, selectObject} from "../actions/chats";
 
 const mapDispatchToProps = (dispatch) => {
     return {
         getChatMessages: (address) => dispatch(getChatMessages(address)),
-        chooseMenu: (address) => dispatch(chooseMenu(address, false))
+        selectObject: (address) => dispatch(selectObject(address, false))
     }
 };
 
 const mapStateToProps = (state) => {
     return {
         session: state.userSession.data,
-        selectedAddress: state.chooseMenu.address
+        selectedAddress: state.messages.selectedAddress
     }
 };
 

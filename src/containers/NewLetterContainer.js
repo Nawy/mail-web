@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {sendLetter} from '../actions/chats'
-import ReplyForm from "../components/letters/forms/ReplyForm";
+import NewLetter from "../components/letters/forms/NewLetter";
 
 
 const mapDispatchToProps = (dispatch) => {
@@ -10,9 +10,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const mapStateToProps = (state) => {
-    return {
-        recipient: state.messages.selectedAddress
-    }
+    return {}
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReplyForm)
+export default connect(mapStateToProps, mapDispatchToProps)(NewLetter)
