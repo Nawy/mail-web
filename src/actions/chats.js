@@ -1,13 +1,21 @@
 import actionTypes from '../actions/actionTypes'
 import api from "../repository/index";
-import {commonGetAction, commonPostAction} from "../util/reduxHelper";
+import {commonGetAction, commonPostWithActionAfterSuccess} from "../util/reduxHelper";
 
 export const selectObject = (address, isSettings) => {
     return {type: actionTypes.SELECT_OBJECT, payload: {address: address, isSettings: isSettings}}
 };
 
 export const sendLetter = (address, text) =>
-    commonPostAction(api.SEND_LETTER, {address: address, text: text, htmlText: text}, actionTypes.SEND_LETTER);
+    commonPostWithActionAfterSuccess(
+        api.SEND_LETTER,
+        {address: address, text: text, htmlText: text},
+        actionTypes.SEND_LETTER,
+        (postSuccessResponse) => {
+            /* какое-то действие которое ты хочешь чтоб выполнилось после удачного выполнения запроса*/
+            // например getSpanChatNames();
+        }
+    );
 
 export const getChatNames = (userName) =>
     commonGetAction(api.GET_CHAT_NAMES(userName), null, actionTypes.GET_CHAT_NAMES);
