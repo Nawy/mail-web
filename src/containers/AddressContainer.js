@@ -1,6 +1,7 @@
 import {connect} from "react-redux";
 import Address from "../components/contacts/Address";
 import {getChatMessages, selectObject} from "../actions/chats";
+import {withRouter} from "react-router-dom";
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -16,4 +17,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Address)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Address))

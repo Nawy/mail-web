@@ -9,6 +9,7 @@ class Address extends Component {
 
     getMailsFromAddress = (event) => {
         event.preventDefault();
+        this.props.history.push(`/${this.props.address}`);
         this.props.getChatMessages(this.props.address);
         this.props.selectObject(this.props.address);
     };

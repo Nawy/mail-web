@@ -17,7 +17,9 @@ class Letters extends Component {
         if (!isEmpty(this.props.match.params) &&
             !isNull(this.props.match.params['email']))
         {
-            this.props.selectObject(this.props.match.params['email']);
+            const email = this.props.match.params['email'];
+            this.props.getChatMessages(email);
+            this.props.selectObject(email);
         }
     }
 
