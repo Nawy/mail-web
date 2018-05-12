@@ -6,6 +6,7 @@ import shortid from "shortid";
 import Loader from "../../util/Loader";
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faBars from "@fortawesome/fontawesome-free-solid/faBars";
+import {AddressLoader} from "../../util/AddressLoader";
 
 class AddressList extends Component {
 
@@ -27,7 +28,7 @@ class AddressList extends Component {
                 .map((value) => <Address key={value.id} address={value.value}/>);
 
 
-    getAddressesOrLoading = (value) => value.isLoading ? <Loader/> :
+    getAddressesOrLoading = (value) => value.isLoading ? <AddressLoader/> :
         this.getAddressesOrEmpty(value.data);
 
     getAddresses = (value) =>

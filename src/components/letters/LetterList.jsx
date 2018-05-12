@@ -8,6 +8,7 @@ import NewLetter from "../../containers/NewLetterContainer";
 import LetterButtonGroup from "../../containers/LetterButtonGroupContainer";
 import ReplyForm from "../../containers/ReplyFormContainer";
 import Settings from "../../containers/settings/SettingsContainer";
+import {MessageLoader} from "../../util/AddressLoader";
 
 const getMessagesWithIds = (messages) => messages.map((value) => {
     return {id: shortid.generate(), value: value}
@@ -23,7 +24,7 @@ const getMessagesOrEmpty = (messages) =>
                 />
         );
 
-const getMessagesOrLoader = (messages) => messages.isMessageLoading ? <Loader/> : getMessagesOrEmpty(messages.messages);
+const getMessagesOrLoader = (messages) => messages.isMessageLoading ? <MessageLoader/> : getMessagesOrEmpty(messages.messages);
 
 const getMessages = (messages) => isNull(messages) ? "" : getMessagesOrLoader(messages);
 
