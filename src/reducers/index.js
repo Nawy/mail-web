@@ -20,10 +20,7 @@ const appReducer = combineReducers({
 });
 
 const rootReducer = (state, action) => {
-    if (action.type === 'LOGOUT_SUCCESS') {
-        state = undefined
-    }
-    if (action.type.substr(action.type.length - 8) === "_FAILURE") {
+    if (action.type === 'LOGOUT_SUCCESS' || action.type === 'CLEAR_REDUX_STATE') {
         state = undefined
     }
 

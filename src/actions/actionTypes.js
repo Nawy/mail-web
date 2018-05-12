@@ -2,6 +2,8 @@ import keyMirror from 'keymirror'
 
 const actionTypes = {
 
+    CLEAR_REDUX_STATE:null,
+
     SEND_LETTER: null,
     GET_CHAT_MESSAGES: null,
 
@@ -11,6 +13,7 @@ const actionTypes = {
     GET_SESSION_USER_NAME: null,
     LOGIN: null,
     LOGOUT: null,
+
     CREATE_NEW_USER: null,
     SELECT_OBJECT: null,
 

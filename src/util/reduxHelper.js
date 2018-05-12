@@ -1,8 +1,10 @@
 import {apiGet, apiPost} from "../repository/apiClient";
 import {deleteSessionCookie} from "./sessionHolder";
+import actionTypes from '../actions/actionTypes'
 
-function removeSessionCookieIfStatusUnauthorized(error) {
+function removeSessionCookieIfStatusUnauthorized(error, dispatch) {
     if (error.status === 401) deleteSessionCookie();
+    dispatch({type:actionTypes.CLEAR_REDUX_STATE})
 }
 
 export const commonGetAction = (url, requestParams, actionName) => {
@@ -13,7 +15,7 @@ export const commonGetAction = (url, requestParams, actionName) => {
             requestParams,
             response => dispatch({type: actionName + '_SUCCESS', payload: response, request: requestParams}),
             error => {
-                removeSessionCookieIfStatusUnauthorized(error);
+                removeSessionCookieIfStatusUnauthorized(error,dispatch);
                 dispatch({type: actionName + '_FAILURE', payload: error, error: true});
             }
         )
