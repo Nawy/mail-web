@@ -28,12 +28,6 @@ class Auth extends Component {
         }
     };
 
-    isLogin = () => {
-        if (this.props.isUserCreated && !this.props.isAuthorized) {
-            this.props.login(this.state.username, this.state.password);
-        }
-    };
-
     getAuthButtonName = () =>
         this.state.username === "" ? "Войти или создать"
             : this.props.isLoginExists ?
@@ -46,7 +40,6 @@ class Auth extends Component {
     render() {
         return (
             <div className="letter-card">
-                {this.isLogin()}
                 <form className="common-form-group">
                     <input type="text"
                            className="form-control"

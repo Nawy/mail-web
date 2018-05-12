@@ -2,7 +2,6 @@ import {apiGet, apiPost} from "../repository/apiClient";
 import {deleteSessionCookie} from "./sessionHolder";
 
 function removeSessionCookieIfStatusUnauthorized(error) {
-    console.log(error);
     if (error.status === 401) deleteSessionCookie();
 }
 
