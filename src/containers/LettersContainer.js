@@ -1,10 +1,13 @@
 import {connect} from "react-redux";
 import Letters from "../components/pages/Letters";
 import isNull from 'lodash/isNull'
+import {selectObject} from "../actions/chats";
 
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
+    return {
+        selectObject: (address) => dispatch(selectObject(address, false))
+    }
 };
 
 const mapStateToProps = (state) => {

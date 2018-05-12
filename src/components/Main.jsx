@@ -8,6 +8,7 @@ const CustomRouter = () => {
             <BrowserRouter>
                 <Switch>
                     <Route exact path='/' component={Letters}/>
+                    <Route exact path='/:email' component={Letters}/>
                 </Switch>
             </BrowserRouter>
         </main>

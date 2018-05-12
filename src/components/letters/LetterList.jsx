@@ -13,27 +13,27 @@ const getMessagesWithIds = (messages) => messages.map((value) => {
     return {id: shortid.generate(), value: value}
 });
 
-const getMessagesOrEmpty = (messages) => isEmpty(messages) ?
-    <p className="text-center">Нет сообщений</p> :
-    getMessagesWithIds(messages).map(
-        message =>
-            <Letter
-                key={message.id}
-                letter={message}
-            />
-    );
+const getMessagesOrEmpty = (messages) =>
+    isEmpty(messages) ? <p className="text-center">Нет сообщений</p> :
+        getMessagesWithIds(messages).reverse().map(
+            message =>
+                <Letter
+                    key={message.id}
+                    letter={message}
+                />
+        );
 
-const getMessagesOrLoader = (messages) => messages.isMessageLoading ? <Loader /> : getMessagesOrEmpty(messages.messages);
+const getMessagesOrLoader = (messages) => messages.isMessageLoading ? <Loader/> : getMessagesOrEmpty(messages.messages);
 
 const getMessages = (messages) => isNull(messages) ? "" : getMessagesOrLoader(messages);
 
 const LetterList = ({isAuthorized, messages, newLetterForm, isSettings, isEmailSelected}) => (
     <div>
-        <LetterButtonGroup />
-        {(isSettings) && <Settings />}
+        <LetterButtonGroup/>
+        {(isSettings) && <Settings/>}
 
-        {(newLetterForm.isNewLetter) && <NewLetter />}
-        {(newLetterForm.isReply && isEmailSelected) && <ReplyForm />}
+        {(newLetterForm.isNewLetter) && <NewLetter/>}
+        {(newLetterForm.isReply && isEmailSelected) && <ReplyForm/>}
         {(!isSettings && isEmailSelected) && getMessages(messages)}
     </div>
 );

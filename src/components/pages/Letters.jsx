@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import isEmpty from 'lodash/isEmpty';
+import isNull from 'lodash/isNull';
 import LetterList from '../../containers/LetterListContainer'
 import AddressList from '../../containers/AddressListContainer'
 import "../../style/letters.scss"
@@ -11,6 +13,14 @@ class Letters extends Component {
         super(props);
     }
 
+    componentDidMount() {
+        if (!isEmpty(this.props.match.params) &&
+            !isNull(this.props.match.params['email']))
+        {
+            this.props.selectObject(this.props.match.params['email']);
+        }
+    }
+
     render() {
         return (<div className="container">
             <div className="row justify-content-center">
@@ -18,7 +28,7 @@ class Letters extends Component {
                     {this.props.isAuthorized ? <AddressList/> : <Auth/>}
                 </div>
                 <div className="right-main-col">
-                    {this.props.isAuthorized ? <LetterList/> : <Greetings />}
+                    {this.props.isAuthorized ? <LetterList/> : <Greetings/>}
                 </div>
             </div>
         </div>);
