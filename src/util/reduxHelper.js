@@ -37,6 +37,25 @@ export const commonPostAction = (url, request, actionName) => {
     }
 };
 
+
+export const commonGetActionActionAfterSuccess = (url, requestParams, actionName, successAction) => {
+    return dispatch => {
+        dispatch({type: actionName + '_STARTED'});
+        apiGet(
+            url,
+            requestParams,
+            response => {
+                dispatch({type: actionName + '_SUCCESS', payload: response, request: requestParams});
+                dispatch(successAction(response));
+            },
+            error => {
+                removeSessionCookieIfStatusUnauthorized(error,dispatch);
+                dispatch({type: actionName + '_FAILURE', payload: error, error: true});
+            }
+        )
+    }
+};
+
 export const commonPostWithActionAfterSuccess = (url, request, actionName, successAction) => {
     return dispatch => {
         dispatch({type: actionName + '_STARTED', request: request});

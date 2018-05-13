@@ -3,7 +3,7 @@ import ContentLoader from "react-content-loader";
 
 export const AddressLoader = props => (
     <ContentLoader
-        height={164}
+        height={242}
         width={323}
         speed={1}
         primaryColor="#f8f9fa"
@@ -14,6 +14,8 @@ export const AddressLoader = props => (
         <rect x="8" y="47" rx="5" ry="5" width="307" height="31"/>
         <rect x="8" y="86" rx="5" ry="5" width="307" height="31"/>
         <rect x="8" y="125" rx="5" ry="5" width="307" height="31"/>
+        <rect x="8" y="164" rx="5" ry="5" width="307" height="31"/>
+        <rect x="8" y="203" rx="5" ry="5" width="307" height="31"/>
     </ContentLoader>
 );
 

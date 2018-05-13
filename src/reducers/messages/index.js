@@ -40,8 +40,6 @@ const messages = (state = INITIAL_STATE, action) => {
             ...state,
             isSendProcessing: true,
             sendLetterData: action.payload,
-            messages: [...state.messages, getMyInstantMessage(action.request.address, action.request.text)],
-            selectedAddress: state.selectedAddress === action.request.address ? state.selectedAddress : action.request.address,
             isSelectedSettings: false,
             error: null
         };
