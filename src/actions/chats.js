@@ -1,7 +1,7 @@
 import actionTypes from '../actions/actionTypes'
 import api from "../repository/index";
 import {
-    commonGetAction, commonGetActionActionAfterSuccess,
+    commonGetAction, commonGetActionAfterSuccess,
     commonPostWithActionAfterSuccess
 } from "../util/reduxHelper";
 
@@ -14,21 +14,27 @@ export const sendLetter = (address, text) =>
         api.SEND_LETTER,
         {address: address, text: text, htmlText: text},
         actionTypes.SEND_LETTER,
-        () => {
-            commonGetActionActionAfterSuccess(
-                api.GET_SPAM_CHAT_NAMES,
-                null,
-                actionTypes.GET_SPAM_CHAT_NAMES,
-                () => selectObject(address, false)
-            )
-        }
+        () => getChatNamesAndSelect(address)
     );
 
-export const getChatNames = (userName) =>
-    commonGetAction(api.GET_CHAT_NAMES(userName), null, actionTypes.GET_CHAT_NAMES);
+export const getChatNamesAndSelect = (address) =>
+    commonGetActionAfterSuccess(
+        api.GET_SPAM_CHAT_NAMES,
+        null,
+        actionTypes.GET_SPAM_CHAT_NAMES,
+        () => getChatMessagesAndSelect(address)
+    );
 
 export const getSpamChatNames = () =>
     commonGetAction(api.GET_SPAM_CHAT_NAMES, null, actionTypes.GET_SPAM_CHAT_NAMES);
 
 export const getChatMessages = (address) =>
     commonGetAction(api.GET_CHAT_MESSAGES(address), null, actionTypes.GET_CHAT_MESSAGES);
+
+export const getChatMessagesAndSelect = (address) =>
+    commonGetActionAfterSuccess(
+        api.GET_CHAT_MESSAGES(address),
+        null,
+        actionTypes.GET_CHAT_MESSAGES,
+        () => selectObject(address, false)
+    );

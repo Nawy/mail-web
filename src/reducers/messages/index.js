@@ -39,16 +39,15 @@ const messages = (state = INITIAL_STATE, action) => {
         return {
             ...state,
             isSendProcessing: true,
-            sendLetterData: action.payload,
             isSelectedSettings: false,
             error: null
         };
     }
     if (action.type === actionTypes.SEND_LETTER + '_SUCCESS') {
-        return {...state, isSendProcessing: false, sendLetterData: action.payload, sendError: null};
+        return {...state, isSendProcessing: false, sendError: null};
     }
     if (action.type === actionTypes.SEND_LETTER + '_FAILURE') {
-        return {...state, isSendProcessing: false, sendLetterData: null, sendError: action.payload};
+        return {...state, isSendProcessing: false, sendError: action.payload};
     }
 
     if (action.type === actionTypes.GET_CHAT_MESSAGES + '_STARTED') {

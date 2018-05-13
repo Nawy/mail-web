@@ -21,6 +21,7 @@ class NewLetter extends Component {
     handlePressSendButton = (event) => {
         event.preventDefault();
         console.info(this.props.recipient);
+        this.props.hideAllWriteLetterForms();
         this.props.sendLetter(this.state.address, this.state.message);
         this.setState({message: "", address: ""});
     };

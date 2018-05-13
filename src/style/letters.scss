@@ -49,3 +49,17 @@
 .letter-card-header {
   @extend .d-flex, .justify-content-end;
 }
+
+.time-badge {
+  @extend .badge, .badge-pill, .badge-light;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+
+.address-badge {
+  @extend .badge, .badge-pill, .badge-info;
+  color: white;
+  background-color: #80BECF;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}

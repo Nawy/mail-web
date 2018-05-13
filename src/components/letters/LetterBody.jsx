@@ -8,12 +8,12 @@ const Letter = ({from, text, date}) => (
     <div className="card-block">
         <div className="letter-card-header">
            <span className="mr-auto p-0">
-                <span className="badge badge-pill badge-info">
+                <span className="address-badge">
                     {from}
                 </span>
             </span>
             <span className="p-0">
-                <span className="badge badge-pill badge-info">
+                <span className="time-badge">
                     {moment(date, "YYYY-MM-DD'T'HH:mm:ss.SSS").fromNow()}
                 </span>
             </span>

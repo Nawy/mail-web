@@ -38,7 +38,7 @@ export const commonPostAction = (url, request, actionName) => {
 };
 
 
-export const commonGetActionActionAfterSuccess = (url, requestParams, actionName, successAction) => {
+export const commonGetActionAfterSuccess = (url, requestParams, actionName, successAction) => {
     return dispatch => {
         dispatch({type: actionName + '_STARTED'});
         apiGet(
