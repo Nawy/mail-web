@@ -10,19 +10,9 @@ const INITIAL_STATE = {
     isSelectedSettings: false,
     selectedAddress: null,
 
-    messages: [],
+/*    messages: [],
     getMessageError: null,
-    isMessageLoading: false
-};
-
-const getMyInstantMessage = (address, text) => {
-    return {
-        address: address,
-        direction: "OUTBOX",
-        text: text,
-        htmlText: text,
-        time: moment().format("YYYY-MM-DD'T'HH:mm:ss.SSS")
-    }
+    isMessageLoading: false*/
 };
 
 const messages = (state = INITIAL_STATE, action) => {
@@ -50,6 +40,7 @@ const messages = (state = INITIAL_STATE, action) => {
         return {...state, isSendProcessing: false, sendError: action.payload};
     }
 
+/*
     if (action.type === actionTypes.GET_CHAT_MESSAGES + '_STARTED') {
         return {...state, isMessageLoading: true, error: null};
     }
@@ -59,6 +50,7 @@ const messages = (state = INITIAL_STATE, action) => {
     if (action.type === actionTypes.GET_CHAT_MESSAGES + '_FAILURE') {
         return {...state, isMessageLoading: false, messages: null, getMessageError: action.payload};
     }
+*/
 
     return state;
 };

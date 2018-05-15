@@ -1,7 +1,8 @@
 import {connect} from "react-redux";
+import MainPage from "../components/MainPage";
 import isNull from 'lodash/isNull'
-import LetterList from "../components/letters/LetterList";
 import {getChatMessages} from "../actions/chats";
+
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -12,12 +13,8 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
     return {
         isAuthorized: !isNull(state.userSession.data),
-        newLetterForm: state.newLetterForm,
-        session: state.userSession.data,
-        messages: state.chatMessages,
-        isSettings: state.messages.isSelectedSettings,
-        isEmailSelected: !isNull(state.messages.currentAddress)
+        isSettings: state.messages.isSelectedSettings
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LetterList)
+export default connect(mapStateToProps, mapDispatchToProps)(MainPage)

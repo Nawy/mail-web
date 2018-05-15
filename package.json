@@ -18,6 +18,7 @@
     "bootstrap": "^4.0.0",
     "dompurify": "^1.0.4",
     "favicons-webpack-plugin": "0.0.9",
+    "history": "^4.7.2",
     "keymirror": "^0.1.1",
     "loaders.css": "^0.1.2",
     "lodash": "^4.17.5",

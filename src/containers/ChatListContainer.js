@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
-import AddressList from "../components/contacts/AddressList";
-import {chooseMenu, getSpamChatNames, selectObject} from "../actions/chats";
+import ChatList from "../components/chats/ChatList";
+import {getSpamChatNames, selectObject} from "../actions/chats";
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -14,9 +14,9 @@ const mapStateToProps = (state) => {
     return {
         session: state.userSession.data,
         spamChatNames: state.getSpamChatNames,
-        address: state.messages.selectedAddress,
+        address: state.messages.currentAddress,
         isSettings: state.messages.isSelectedSettings
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddressList)
+export default connect(mapStateToProps, mapDispatchToProps)(ChatList)

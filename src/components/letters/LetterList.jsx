@@ -1,34 +1,23 @@
 import React from 'react';
 import isNull from 'lodash/isNull'
 import isEmpty from 'lodash/isEmpty'
-import Loader from "../../util/Loader";
-import shortid from "shortid";
 import Letter from "./Letter";
 import NewLetter from "../../containers/NewLetterContainer";
 import LetterButtonGroup from "../../containers/LetterButtonGroupContainer";
 import ReplyForm from "../../containers/ReplyFormContainer";
-import Settings from "../../containers/settings/SettingsContainer";
-import {MessageLoader} from "../../util/AddressLoader";
+import Settings from "../../containers/SettingsContainer";
+import {MessageLoader} from "../../util/Loader";
 
-const getMessagesWithIds = (messages) => messages.map((value) => {
-    return {id: shortid.generate(), value: value}
-});
 
-const getMessagesOrEmpty = (messages) =>
-    isEmpty(messages) ? <p className="text-center">Нет сообщений</p> :
-        getMessagesWithIds(messages).reverse().map(
-            message =>
-                <Letter
-                    key={message.id}
-                    letter={message}
-                />
-        );
+const getMessages = (messages) => {
+    if (messages.isLoading) return <MessageLoader/>;
+    const messagesData = messages.data;
+    if (isNull(messagesData) || isEmpty(messagesData)) return <p className="text-center">Нет сообщений</p>;
+    console.log("Messages",messages);
+    return messagesData.reverse().map(message => <Letter letter={message}/>);
+};
 
-const getMessagesOrLoader = (messages) => messages.isMessageLoading ? <MessageLoader/> : getMessagesOrEmpty(messages.messages);
-
-const getMessages = (messages) => isNull(messages) ? "" : getMessagesOrLoader(messages);
-
-const LetterList = ({isAuthorized, messages, newLetterForm, isSettings, isEmailSelected}) => (
+const LetterList = ({messages, newLetterForm, isSettings, isEmailSelected}) => (
     <div>
         <LetterButtonGroup/>
         {(isSettings) && <Settings/>}

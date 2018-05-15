@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
     return {
-        recipient: state.messages.selectedAddress
+        recipient: state.messages.currentAddress
     }
 };
 

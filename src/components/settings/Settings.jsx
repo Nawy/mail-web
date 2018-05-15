@@ -1,8 +1,4 @@
 import React, {Component} from 'react';
-import isNull from 'lodash/isNull'
-import isEmpty from 'lodash/isEmpty'
-import Loader from "../../util/Loader";
-import ReplyForm from "../../containers/ReplyFormContainer";
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faInbox from "@fortawesome/fontawesome-free-solid/faInbox";
 

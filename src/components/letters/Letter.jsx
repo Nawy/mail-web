@@ -3,14 +3,14 @@ import IncomingLettter from "./IncomingLetter";
 import OutcomingLettter from "./OutcomingLetter";
 
 const Letter = ({letter}) =>
-    letter.value.direction === "INBOX" ?
-        <IncomingLettter from={letter.value.address}
-                         text={letter.value.htmlText}
-                         date={letter.value.time}
+    letter.direction === "INBOX" ?
+        <IncomingLettter from={letter.address}
+                         text={letter.htmlText}
+                         date={letter.time}
         /> :
         <OutcomingLettter from="me"
-                          text={letter.value.htmlText}
-                          date={letter.value.time}
+                          text={letter.htmlText}
+                          date={letter.time}
         />;
 
 export default Letter;

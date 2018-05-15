@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
-import RecipientAddress from "../../contacts/RecipientAddress";
 
 class NewLetter extends Component {
     constructor(props) {

@@ -1,9 +1,10 @@
 import actionTypes from '../actions/actionTypes'
 import api from "../repository/index";
 import {
-    commonGetAction, commonGetActionAfterSuccess,
+    commonGetAction, commonGetActionAfterSuccess, commonGetWithMethodAfterSuccess,
     commonPostWithActionAfterSuccess
 } from "../util/reduxHelper";
+import {history} from "../components/Router";
 
 export const selectObject = (address, isSettings) => {
     return {type: actionTypes.SELECT_OBJECT, payload: {address: address, isSettings: isSettings}}
@@ -32,9 +33,10 @@ export const getChatMessages = (address) =>
     commonGetAction(api.GET_CHAT_MESSAGES(address), null, actionTypes.GET_CHAT_MESSAGES);
 
 export const getChatMessagesAndSelect = (address) =>
-    commonGetActionAfterSuccess(
+    commonGetWithMethodAfterSuccess(
         api.GET_CHAT_MESSAGES(address),
         null,
         actionTypes.GET_CHAT_MESSAGES,
-        () => selectObject(address, false)
+        () => history.push(address)
+        //() => selectObject(address, false)
     );
