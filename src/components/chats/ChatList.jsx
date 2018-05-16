@@ -25,26 +25,26 @@ class ChatList extends Component {
     };
 
     handleClickSettings = () => {
-        if (this.props.isSettings) {
-            this.props.unselectObjectSettings();
+        if (this.props.isSettingsWindowVisible) {
+            this.props.setSettingsWindowInvisible();
         } else {
-            this.props.selectObjectSettings();
+            this.props.setSettingWindowVisible();
         }
     };
 
     userInfo = (
-        <button type="button" className="btn-rounded btn-block" onClick={() => this.handleClickSettings}>
+        <button type="button" className="btn-rounded btn-block" onClick={() => this.handleClickSettings()}>
             <FontAwesomeIcon icon={faBars}/> {this.props.session.name}
         </button>
     );
 
     userInfoSelected = (
-        <button type="button" className="btn-rounded-selected btn-block" onClick={() => this.handleClickSettings}>
+        <button type="button" className="btn-rounded-selected btn-block" onClick={() => this.handleClickSettings()}>
             <FontAwesomeIcon icon={faBars}/> {this.props.session.name}
         </button>
     );
 
-    getUserInfo = () => this.props.isSettings ? this.userInfoSelected : this.userInfo;
+    getUserInfo = () => this.props.isSettingsWindowVisible ? this.userInfoSelected : this.userInfo;
 
     render() {
         console.log("CHATS IS REWRITTEN");

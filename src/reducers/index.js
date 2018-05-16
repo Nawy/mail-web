@@ -3,6 +3,7 @@ import {commonReducer} from "../util/reduxHelper";
 import actionTypes from '../actions/actionTypes';
 import messages from './customReducers/messages'
 import newLetterForm from './customReducers/newLetterForm'
+import windows from "./customReducers/windows";
 
 const appReducer = combineReducers({
     newLetterForm,
@@ -14,7 +15,8 @@ const appReducer = combineReducers({
     userSession: (state, action) => commonReducer(actionTypes.GET_SESSION_USER_NAME, action, state),
     getChatNames: (state, action) => commonReducer(actionTypes.GET_CHAT_NAMES, action, state),
     getSpamChatNames: (state, action) => commonReducer(actionTypes.GET_SPAM_CHAT_NAMES, action, state),
-    chatMessages: (state, action) => commonReducer(actionTypes.GET_CHAT_MESSAGES, action, state)
+    chatMessages: (state, action) => commonReducer(actionTypes.GET_CHAT_MESSAGES, action, state),
+    windows
 });
 
 const rootReducer = (state, action) => {

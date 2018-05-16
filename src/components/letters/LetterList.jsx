@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import isNull from 'lodash/isNull'
 import isEmpty from 'lodash/isEmpty'
 import Letter from "./Letter";
@@ -9,24 +9,31 @@ import Settings from "../../containers/SettingsContainer";
 import {MessageLoader} from "../../util/Loader";
 
 
-const getMessages = (messages) => {
-    if (messages.isLoading) return <MessageLoader/>;
-    const messagesData = messages.data;
-    if (isNull(messagesData) || isEmpty(messagesData)) return <p className="text-center">Нет сообщений</p>;
-    console.log("Messages",messages);
-    return messagesData.reverse().map(message => <Letter letter={message}/>);
-};
+class LetterList extends Component {
 
-const LetterList = ({messages, newLetterForm, isSettings, isEmailSelected}) => (
-    <div>
-        <LetterButtonGroup/>
-        {(isSettings) && <Settings/>}
+     getMessages = (messages) => {
+        if (messages.isLoading) return <MessageLoader/>;
+        const messagesData = messages.data;
+        if (isNull(messagesData) || isEmpty(messagesData)) return <p className="text-center">Нет сообщений</p>;
+        console.log("Messages",messages);
+        return messagesData.reverse().map(message => <Letter letter={message}/>);
+    };
 
-        {(newLetterForm.isNewLetter) && <NewLetter/>}
-        {(newLetterForm.isReply && isEmailSelected) && <ReplyForm/>}
-        {(!isSettings && isEmailSelected) && getMessages(messages)}
-    </div>
-);
+     render(){
+         const{messages, newLetterForm, isSettingsWindowVisible, isEmailSelected} = this.props;
+         return (
+             <div>
+                 <LetterButtonGroup/>
+                 {(isSettingsWindowVisible) && <Settings/>}
+
+                 {(newLetterForm.isNewLetter) && <NewLetter/>}
+                 {(newLetterForm.isReply && isEmailSelected) && <ReplyForm/>}
+                 {(isEmailSelected) && this.getMessages(messages)}
+             </div>
+         );
+     }
+
+}
 
 export default LetterList;
 

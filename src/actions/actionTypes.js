@@ -15,7 +15,7 @@ const actionTypes = {
     LOGOUT: null,
 
     CREATE_NEW_USER: null,
-    SELECT_OBJECT: null,
+    SET_WINDOWS_VISIBILITY_STATE: null,
 
     SHOW_NEW_LETTER_FORM: null,
     SHOW_REPLY_LETTER_FORM: null,

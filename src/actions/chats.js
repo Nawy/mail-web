@@ -6,10 +6,6 @@ import {
 } from "../util/reduxHelper";
 import {history} from "../components/Router";
 
-export const selectObject = (address, isSettings) => {
-    return {type: actionTypes.SELECT_OBJECT, payload: {address: address, isSettings: isSettings}}
-};
-
 export const sendLetter = (address, text) =>
     commonPostWithActionAfterSuccess(
         api.SEND_LETTER,
@@ -38,5 +34,5 @@ export const getChatMessagesAndSelect = (address) =>
         null,
         actionTypes.GET_CHAT_MESSAGES,
         () => history.push(address)
-        //() => selectObject(address, false)
+        //() => setSettingWindowVisible(address, false)
     );

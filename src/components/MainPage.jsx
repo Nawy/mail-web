@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import isEmpty from 'lodash/isEmpty';
-import isNull from 'lodash/isNull';
 import LetterList from '../containers/LetterListContainer'
 import ChatList from '../containers/ChatListContainer'
 import "../style/letters.scss"
@@ -16,14 +14,8 @@ const Greetings = () => (
 
 class MainPage extends Component {
 
-    componentDidMount() {
-        if (!isEmpty(this.props.match.params) && !isNull(this.props.match.params['email'])) {
-            const email = this.props.match.params['email'];
-            this.props.chatMessages(email);
-        }
-    }
-
     render() {
+        // this.props.match.params['email'] required in chatList to force that element recall method render
         return (
         <div className="container">
             <div className="row justify-content-center">

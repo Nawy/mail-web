@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
         newLetterForm: state.newLetterForm,
         session: state.userSession.data,
         messages: state.chatMessages,
-        isSettings: state.messages.isSelectedSettings,
+        isSettingsWindowVisible: state.windows.isSettingsWindowOpen,
         isEmailSelected: !isNull(state.messages.currentAddress)
     }
 };

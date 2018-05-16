@@ -1,12 +1,13 @@
 import {connect} from "react-redux";
 import ChatList from "../components/chats/ChatList";
-import {getSpamChatNames, selectObject} from "../actions/chats";
+import {getSpamChatNames} from "../actions/chats";
+import {setSettingWindowsVisibility} from "../actions/windows";
 
 const mapDispatchToProps = (dispatch) => {
     return {
         getSpamChatNames: () => dispatch(getSpamChatNames()),
-        selectObjectSettings: () => dispatch(selectObject(null, true)),
-        unselectObjectSettings: () => dispatch(selectObject(null, false))
+        setSettingWindowVisible: () => dispatch(setSettingWindowsVisibility(true)),
+        setSettingsWindowInvisible: () => dispatch(setSettingWindowsVisibility(false))
     }
 };
 
@@ -14,8 +15,7 @@ const mapStateToProps = (state) => {
     return {
         session: state.userSession.data,
         spamChatNames: state.getSpamChatNames,
-        address: state.messages.currentAddress,
-        isSettings: state.messages.isSelectedSettings
+        isSettingsWindowVisible: state.windows.isSettingsWindowOpen
     }
 };
 
