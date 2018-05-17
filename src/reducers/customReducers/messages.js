@@ -4,9 +4,6 @@ const INITIAL_STATE = {
     sendLetterData: null,
     isSendProcessing: false,
     sendError: null,
-
-    selectedAddress: null,
-
 };
 
 const messages = (state = INITIAL_STATE, action) => {

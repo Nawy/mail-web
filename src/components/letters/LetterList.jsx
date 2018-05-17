@@ -16,7 +16,8 @@ class LetterList extends Component {
         const messagesData = messages.data;
         if (isNull(messagesData) || isEmpty(messagesData)) return <p className="text-center">Нет сообщений</p>;
         console.log("Messages",messages);
-        return messagesData.reverse().map(message => <Letter letter={message}/>);
+         return messagesData.map(message => <Letter letter={message}/>);
+        //return messagesData.reverse().map(message => <Letter letter={message}/>);
     };
 
      render(){

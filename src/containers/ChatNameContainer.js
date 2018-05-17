@@ -9,8 +9,10 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-const mapStateToProps = (state) => {
-    return {}
+const mapStateToProps = (state, ownProps) => {
+    return {
+        route: state.routing.locationBeforeTransitions || ownProps.location
+    }
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ChatName))

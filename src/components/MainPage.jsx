@@ -15,12 +15,11 @@ const Greetings = () => (
 class MainPage extends Component {
 
     render() {
-        // this.props.match.params['email'] required in chatList to force that element recall method render
         return (
         <div className="container">
             <div className="row justify-content-center">
                 <div className="left-main-col">
-                    {this.props.isAuthorized ? <ChatList id={this.props.match.params['email']}/> : <Auth/>}
+                    {this.props.isAuthorized ? <ChatList/> : <Auth/>}
                 </div>
                 <div className="right-main-col">
                     {this.props.isAuthorized ? <LetterList/> : <Greetings/>}

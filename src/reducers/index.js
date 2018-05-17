@@ -4,8 +4,10 @@ import actionTypes from '../actions/actionTypes';
 import messages from './customReducers/messages'
 import newLetterForm from './customReducers/newLetterForm'
 import windows from "./customReducers/windows";
+import { routerReducer } from 'react-router-redux'
 
 const appReducer = combineReducers({
+    routing: routerReducer,
     newLetterForm,
     messages,
     login: (state, action) => commonReducer(actionTypes.LOGIN, action, state),
