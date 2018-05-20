@@ -1,11 +1,11 @@
 import React from 'react';
 import Footer from "./Footer";
-import Main from "./Main";
+import Router from "./Router";
 
 
 const App = () => (
     <div>
-        <Main/>
+        <Router/>
         <Footer/>
     </div>
 );

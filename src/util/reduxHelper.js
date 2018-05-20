@@ -37,6 +37,23 @@ export const commonPostAction = (url, request, actionName) => {
     }
 };
 
+export const commonGetWithMethodAfterSuccess = (url, requestParams, actionName, successMethod) => {
+    return dispatch => {
+        dispatch({type: actionName + '_STARTED'});
+        apiGet(
+            url,
+            requestParams,
+            response => {
+                dispatch({type: actionName + '_SUCCESS', payload: response, request: requestParams});
+                successMethod(response);
+            },
+            error => {
+                removeSessionCookieIfStatusUnauthorized(error,dispatch);
+                dispatch({type: actionName + '_FAILURE', payload: error, error: true});
+            }
+        )
+    }
+};
 
 export const commonGetActionAfterSuccess = (url, requestParams, actionName, successAction) => {
     return dispatch => {
@@ -81,14 +98,16 @@ const INITIAL_STATE = {
 };
 
 export const commonReducer = (actionName, action, state = INITIAL_STATE) => {
-    if (action.type === actionName + '_STARTED') {
-        return {...state, isLoading: true, error: null};
+    switch (action.type) {
+        case actionName + '_STARTED':
+            return {...state, isLoading: true, error: null};
+        case actionName + '_SUCCESS':
+            return {...state, isLoading: false, data: action.payload, error: null};
+        case actionName + '_FAILURE':
+            return {...state, isLoading: false, data: null, error: action.payload};
+        case actionName + '_CLEAR':
+            return {...state, isLoading: false, data: null, error: null};
+        default:
+            return state;
     }
-    if (action.type === actionName + '_SUCCESS') {
-        return {...state, isLoading: false, data: action.payload, error: null};
-    }
-    if (action.type === actionName + '_FAILURE') {
-        return {...state, isLoading: false, data: null, error: action.payload};
-    }
-    return state;
 };

@@ -1,20 +1,19 @@
 import {connect} from "react-redux";
 import isNull from 'lodash/isNull'
-import {showNewLetterForm, showReplyForm, hideAllWriteLetterForms} from '../actions/newLetters'
+import {showNewLetterForm, showReplyForm, hideAllForms} from '../actions/windows'
 import LetterButtonGroup from "../components/letters/LetterButtonGroup";
 
 const mapDispatchToProps = (dispatch) => {
     return {
         showNewLetterForm: () => dispatch(showNewLetterForm()),
         showReplyForm: () => dispatch(showReplyForm()),
-        hideAllWriteLetterForms: () => dispatch(hideAllWriteLetterForms())
+        hideAllWindows: () => dispatch(hideAllForms())
     }
 };
 
 const mapStateToProps = (state) => {
     return {
-        newLetterForm: state.newLetterForm,
-        isEmailSelected: !isNull(state.messages.selectedAddress)
+        windows: state.windows
     }
 };
 

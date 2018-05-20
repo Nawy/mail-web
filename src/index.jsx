@@ -10,10 +10,13 @@ import App from './containers/AppContainer'
 // style
 import 'bootstrap/dist/css/bootstrap.css';
 import './style/theme.scss';
+import {syncHistoryWithStore} from "react-router-redux";
+import {createBrowserHistory} from "history";
 
 let middleware = [thunkMiddleware, logger];
 const defaultStore = {};
-const store = createStore(reducers, defaultStore, applyMiddleware(...middleware));
+export const store = createStore(reducers, defaultStore, applyMiddleware(...middleware));
+export const history = syncHistoryWithStore(createBrowserHistory(), store);
 
 ReactDOM.render(
     <Provider store={store}>
