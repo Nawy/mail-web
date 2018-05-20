@@ -11,8 +11,7 @@ const appReducer = combineReducers({
     createNewUser: (state, action) => commonReducer(actionTypes.CREATE_NEW_USER, action, state),
     userName: (state, action) => commonReducer(actionTypes.CHECK_USER_NAME, action, state),
     userSession: (state, action) => commonReducer(actionTypes.GET_SESSION_USER_NAME, action, state),
-    getChatNames: (state, action) => commonReducer(actionTypes.GET_CHAT_NAMES, action, state),
-    getSpamChatNames: (state, action) => commonReducer(actionTypes.GET_SPAM_CHAT_NAMES, action, state),
+    spamChats: (state, action) => commonReducer(actionTypes.GET_SPAM_CHATS, action, state),
     chatMessages: (state, action) => commonReducer(actionTypes.CHAT_MESSAGES, action, state),
     windows
 });

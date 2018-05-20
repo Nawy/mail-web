@@ -6,14 +6,13 @@ import {hideAllForms} from "../actions/windows";
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        //chatMessages: (address) => dispatch(getChatMessages(address)),
         hideAllWindows: () => dispatch(hideAllForms())
     }
 };
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        oldUrl: (state.routing.locationBeforeTransitions || ownProps.location).pathname
+        currentUrl: (state.routing.locationBeforeTransitions || ownProps.location).pathname
     }
 };
 

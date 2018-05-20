@@ -1,11 +1,11 @@
 import {connect} from "react-redux";
 import ChatList from "../components/chats/ChatList";
-import {getSpamChatNames} from "../actions/chats";
-import {hideAllForms, setSettingWindowsVisibility, showSettingsForm} from "../actions/windows";
+import {getSpamChats} from "../actions/chats";
+import {hideAllForms, showSettingsForm} from "../actions/windows";
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getSpamChatNames: () => dispatch(getSpamChatNames()),
+        getSpamChats: () => dispatch(getSpamChats()),
         showSettingsForm: () => dispatch(showSettingsForm()),
         hideAllWindows: () => dispatch(hideAllForms())
     }
@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
     return {
         session: state.userSession.data,
-        spamChatNames: state.getSpamChatNames,
+        spamChats: state.spamChats,
         isSettingsWindowVisible: state.windows.isSettingsWindowOpen
     }
 };

@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import isEmpty from 'lodash/isEmpty'
-import isNull from 'lodash/isNull'
 import ChatName from '../../containers/ChatNameContainer'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 import {ChatLoader} from "../../util/Loader";
+import moment from "moment";
 
 class ChatList extends Component {
 
@@ -13,15 +13,19 @@ class ChatList extends Component {
     }
 
     componentDidMount() {
-        this.props.getSpamChatNames();
+        this.props.getSpamChats();
     }
 
-    getChatNames = (spamChatNames) => {
-        if (isNull(spamChatNames)) return "";
-        if (spamChatNames.isLoading) return <ChatLoader/>;
-        const spamChatNamesData = spamChatNames.data;
-        if (isEmpty(spamChatNamesData)) return <p className="text-center">Нет контактов</p>;
-        return spamChatNamesData.map((chatName) => <ChatName address={chatName}/>);
+    getChats = (spamChats) => {
+        if (spamChats.isLoading) return <ChatLoader/>;
+        const spamChatsData = spamChats.data;
+        if (isEmpty(spamChatsData)) return <p className="text-center">Нет контактов</p>;
+        spamChatsData.sort((leftChat, rightChat) => {
+            const leftChatDate = moment(leftChat.lastDeliveryDate, "YYYY-MM-DD'T'HH:mm:ss.SSS");
+            const rightChatDate = moment(rightChat.lastDeliveryDate, "YYYY-MM-DD'T'HH:mm:ss.SSS");
+            return rightChatDate.diff(leftChatDate);
+        });
+        return spamChatsData.map((chat) => <ChatName chat={chat}/>);
     };
 
     handleClickSettings = () => {
@@ -52,7 +56,7 @@ class ChatList extends Component {
             <div>
                 {this.getUserInfo()}
                 <div className="address-card">
-                    {this.getChatNames(this.props.spamChatNames)}
+                    {this.getChats(this.props.spamChats)}
                 </div>
             </div>
         );
