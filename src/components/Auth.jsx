@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import isNull from 'lodash/isNull'
-import Loader from "../util/Loader";
 
 class Auth extends Component {
 
@@ -28,26 +26,20 @@ class Auth extends Component {
         }
     };
 
-    isLogin = () => {
-        if (this.props.isUserCreated && !this.props.isAuthorized) {
-            this.props.login(this.state.username, this.state.password);
-        }
+    getAuthButtonName = () => {
+        console.log("is login exists ", this.props.isLoginExists);
+        if (this.state.username === "") return "Войти или создать";
+        if (this.props.isLoginExists) return this.state.password.length < 6 ? "Уже существует, введите пароль" : "Войти";
+        if (this.state.username.length < 3) return "Продолжайте вводить имя";
+        if (this.state.password.length < 6) return "Пароль для нового";
+        return "Создать!";
     };
-
-    getAuthButtonName = () =>
-        this.state.username === "" ? "Войти или создать"
-            : this.props.isLoginExists ?
-                this.state.password.length < 6 ? "Уже существует, введите пароль" : "Войти"
-            : this.state.username.length < 3 ? "Продолжайте вводить имя"
-                : this.state.password.length < 6 ? "Пароль для нового"
-                    : "Создать!";
 
 
     render() {
         return (
             <div className="letter-card">
-                {this.isLogin()}
-                <form className="form-group">
+                <form className="common-form-group">
                     <input type="text"
                            className="form-control"
                            placeholder="login@"
@@ -64,8 +56,9 @@ class Auth extends Component {
                     </button>
                 </form>
                 {
-                    this.props.isLoginError ?
-                        <div className="alert alert-danger" role="alert">{this.props.isLoginError}</div>
+                    this.props.loginError ?
+                        <div style={{marginTop: 20}} className="alert alert-danger" role="alert">Неправильный
+                            пароль</div>
                         : ''
                 }
             </div>

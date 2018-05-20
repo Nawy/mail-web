@@ -1,15 +1,22 @@
 import {connect} from "react-redux";
+import isNull from 'lodash/isNull'
 import LetterList from "../components/letters/LetterList";
+import {clearChatMessages, getChatMessages} from "../actions/chats";
+import {withRouter} from "react-router-dom";
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
-};
-
-const mapStateToProps = (state) => {
     return {
-        session: state.userSession.data,
-        messages: state.getChatMessages
+        getChatMessages: (address) => dispatch(getChatMessages(address)),
+        clearChatMessages: () => dispatch(clearChatMessages())
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LetterList)
+const mapStateToProps = (state, ownProps) => {
+    return {
+        windows: state.windows,
+        messages: state.chatMessages,
+        currentUrl: (state.routing.locationBeforeTransitions || ownProps.location).pathname
+    }
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LetterList))

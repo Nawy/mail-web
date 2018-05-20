@@ -13,11 +13,20 @@
   @extend .btn, .btn-primary, .btn-sm, .my-1, .text-left;
 }
 
+.btn-rounded {
+  @extend .btn, .btn-light, .btn-sm, .mb-2;
+  border-radius: 25px;
+}
+
+.btn-rounded-selected {
+  @extend .btn, .btn-primary, .btn-sm, .mb-2;
+  border-radius: 25px;
+}
+
+
 .address-card {
-  @extend .card;
+  @extend .card, .mb-2, .p-2;
   border: none;
-  padding: 10px;
-  margin-bottom: 10px;
 }
 
 .user-card {
@@ -28,10 +37,8 @@
 }
 
 .letter-card {
-  @extend .card;
+  @extend .card, .mb-2, .p-2;
   border: none;
-  padding: 10px;
-  margin-bottom: 10px;
 }
 
 .letter-card-sender {
@@ -41,4 +48,18 @@
 
 .letter-card-header {
   @extend .d-flex, .justify-content-end;
+}
+
+.time-badge {
+  @extend .badge, .badge-pill, .badge-light;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+
+.address-badge {
+  @extend .badge, .badge-pill, .badge-info;
+  color: white;
+  background-color: #80BECF;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
 }

@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
-import {getSessionUserNameAction, logoutAction} from "../../actions/auth";
-import Settings from "../../components/settings/Settings";
+import {getSessionUserNameAction, logoutAction} from "../actions/auth";
+import Settings from "../components/settings/Settings";
 
 const mapDispatchToProps = (dispatch) => {
     return {

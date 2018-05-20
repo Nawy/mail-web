@@ -22,8 +22,8 @@ const mapStateToProps = (state) => {
     return {
         sessionNameState: state.userSession,
         isAuthorized: state.userSession.data !== null,
-        isLoginError: !isNull(state.login.error),
-        isLoginExists: isNull(state.userName.error),
+        loginError: state.login.error,
+        isLoginExists: isNull(state.userName.error) && !isNull(state.userName.data),
         isUserCreated: checkIsUserCreated(state)
     }
 };

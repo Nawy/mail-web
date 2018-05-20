@@ -14,7 +14,9 @@ module.exports = merge(common, {
     ],
     devServer: {
         progress: true,
-        historyApiFallback: true,
+        historyApiFallback: {
+            disableDotRule: true
+        },
         port: 3000,
         proxy: {
             '/api': {
