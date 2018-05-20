@@ -26,9 +26,9 @@ class ChatList extends Component {
 
     handleClickSettings = () => {
         if (this.props.isSettingsWindowVisible) {
-            this.props.setSettingsWindowInvisible();
+            this.props.hideAllWindows();
         } else {
-            this.props.setSettingWindowVisible();
+            this.props.showSettingsForm();
         }
     };
 

@@ -1,13 +1,13 @@
 import {connect} from "react-redux";
 import ChatList from "../components/chats/ChatList";
 import {getSpamChatNames} from "../actions/chats";
-import {setSettingWindowsVisibility} from "../actions/windows";
+import {hideAllForms, setSettingWindowsVisibility, showSettingsForm} from "../actions/windows";
 
 const mapDispatchToProps = (dispatch) => {
     return {
         getSpamChatNames: () => dispatch(getSpamChatNames()),
-        setSettingWindowVisible: () => dispatch(setSettingWindowsVisibility(true)),
-        setSettingsWindowInvisible: () => dispatch(setSettingWindowsVisibility(false))
+        showSettingsForm: () => dispatch(showSettingsForm()),
+        hideAllWindows: () => dispatch(hideAllForms())
     }
 };
 

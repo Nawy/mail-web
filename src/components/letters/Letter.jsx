@@ -6,11 +6,11 @@ const Letter = ({letter}) =>
     letter.direction === "INBOX" ?
         <IncomingLettter from={letter.address}
                          text={letter.htmlText}
-                         date={letter.time}
+                         date={letter.deliveryTime}
         /> :
         <OutcomingLettter from="me"
                           text={letter.htmlText}
-                          date={letter.time}
+                          date={letter.deliveryTime}
         />;
 
 export default Letter;

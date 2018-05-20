@@ -5,7 +5,7 @@ const actionTypes = {
     CLEAR_REDUX_STATE:null,
 
     SEND_LETTER: null,
-    GET_CHAT_MESSAGES: null,
+    CHAT_MESSAGES: null,
 
     CHECK_USER_NAME:null,
     GET_CHAT_NAMES: null,
@@ -15,12 +15,11 @@ const actionTypes = {
     LOGOUT: null,
 
     CREATE_NEW_USER: null,
-    SET_WINDOWS_VISIBILITY_STATE: null,
 
+    SHOW_SETTINGS_FORM:null,
     SHOW_NEW_LETTER_FORM: null,
     SHOW_REPLY_LETTER_FORM: null,
-    HIDE_ALL_WRITE_LETTER_FORM: null
-
+    CLOSE_ALL_WINDOWS: null
 };
 
 export default keyMirror(actionTypes);
