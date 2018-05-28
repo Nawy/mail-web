@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import LetterList from '../containers/LetterListContainer'
 import ChatList from '../containers/ChatListContainer'
 import "../style/letters.scss"
 import Auth from "../containers/AuthContainer";
+import {ChatLoader, MessageLoader} from "../util/Loader";
 
 const Greetings = () => (
     <div className="letter-card">
@@ -12,20 +13,36 @@ const Greetings = () => (
     </div>
 );
 
-class MainPage extends Component {
+
+class MainPage extends PureComponent {
+
+    constructor(props) {
+        super(props);
+        this.props.getSessionUserName();
+    }
+
+    getChatListOrAuth = () => {
+        return this.props.isLoading ? <ChatLoader/> :
+            this.props.isAuthorized ? <ChatList/> :
+                this.props.isErrorAuth ? <Auth/> : <ChatLoader/>
+    };
+
+    getMessagesOrGreeting = () => this.props.isLoading ? <MessageLoader/> :
+        this.props.isAuthorized ? <LetterList/> :
+            this.props.isErrorAuth ? <Greetings/> : <MessageLoader/>;
 
     render() {
         return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="left-main-col">
-                    {this.props.isAuthorized ? <ChatList/> : <Auth/>}
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="left-main-col">
+                        {this.getChatListOrAuth()}
+                    </div>
+                    <div className="right-main-col">
+                        {this.getMessagesOrGreeting()}
+                    </div>
                 </div>
-                <div className="right-main-col">
-                    {this.props.isAuthorized ? <LetterList/> : <Greetings/>}
-                </div>
-            </div>
-        </div>);
+            </div>);
     }
 }
 

@@ -4,11 +4,11 @@ import moment from 'moment';
 import 'moment/locale/ru';
 moment.locale("ru");
 
-const Letter = ({from, text, date}) => (
+const Letter = ({direction, from, text, date}) => (
     <div className="card-block">
         <div className="letter-card-header">
            <span className="mr-auto p-0">
-                <span className="address-badge">
+                <span className={direction === "OUT" ? "out-address-badge" : "in-address-badge"}>
                     {from}
                 </span>
             </span>

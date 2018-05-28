@@ -3,8 +3,10 @@ import {deleteSessionCookie} from "./sessionHolder";
 import actionTypes from '../actions/actionTypes'
 
 function removeSessionCookieIfStatusUnauthorized(error, dispatch) {
-    if (error.status === 401) deleteSessionCookie();
-    dispatch({type:actionTypes.CLEAR_REDUX_STATE})
+    if (error.status === 401) {
+        deleteSessionCookie();
+        dispatch({type:actionTypes.CLEAR_REDUX_STATE})
+    }
 }
 
 export const commonGetAction = (url, requestParams, actionName) => {

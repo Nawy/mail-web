@@ -13,6 +13,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state, ownProps) => {
     return {
+        session: state.userSession.data,
         windows: state.windows,
         messages: state.chatMessages,
         currentUrl: (state.routing.locationBeforeTransitions || ownProps.location).pathname

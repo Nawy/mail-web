@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 
-class Auth extends Component {
+class Auth extends PureComponent {
 
     constructor(props) {
         super(props);
         this.state = {username: '', password: ''};
-        this.props.getSessionUserName();
     }
 
     changeUsername = (event) => {

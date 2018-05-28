@@ -58,8 +58,18 @@
 
 .address-badge {
   @extend .badge, .badge-pill, .badge-info;
-  color: white;
-  background-color: #80BECF;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
+}
+
+.in-address-badge {
+  @extend .address-badge;
+  color: white;
+  background-color: #80BECF;
+}
+
+.out-address-badge {
+  @extend .address-badge;
+  color: white;
+  background-color: #FFA89A;
 }

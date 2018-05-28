@@ -43,7 +43,7 @@ class LetterList extends Component {
         const messagesData = messages.data;
         if (isNull(messagesData) || isEmpty(messagesData)) return <p className="text-center">Нет сообщений</p>;
          const messagesCopy = messagesData.slice(); // create array shallow copy
-         return messagesCopy.reverse().map(message => <Letter letter={message}/>);
+         return messagesCopy.reverse().map(message => <Letter letter={message} userEmail={this.props.session.name}/>);
     };
 
      render(){

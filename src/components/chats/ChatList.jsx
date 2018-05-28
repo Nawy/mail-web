@@ -1,12 +1,13 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import isEmpty from 'lodash/isEmpty'
+import isNull from 'lodash/isNull'
 import ChatName from '../../containers/ChatNameContainer'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faBars from "@fortawesome/fontawesome-free-solid/faBars";
 import {ChatLoader} from "../../util/Loader";
 import moment from "moment";
 
-class ChatList extends Component {
+class ChatList extends PureComponent {
 
     constructor(props) {
         super(props);
@@ -17,7 +18,7 @@ class ChatList extends Component {
     }
 
     getChats = (spamChats) => {
-        if (spamChats.isLoading) return <ChatLoader/>;
+        if (spamChats.isLoading && isNull(spamChats.data)) return <ChatLoader/>;
         const spamChatsData = spamChats.data;
         if (isEmpty(spamChatsData)) return <p className="text-center">Нет контактов</p>;
         spamChatsData.sort((leftChat, rightChat) => {
