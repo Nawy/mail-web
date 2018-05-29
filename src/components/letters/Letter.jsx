@@ -8,7 +8,7 @@ const Letter = ({letter, userEmail}) =>
                          text={letter.htmlText}
                          date={letter.deliveryTime}
         /> :
-        <OutcomingLettter from={userEmail}
+        <OutcomingLettter from={userEmail + "@lite.ninja"}
                           text={letter.htmlText}
                           date={letter.deliveryTime}
         />;

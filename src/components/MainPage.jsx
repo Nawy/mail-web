@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import LetterList from '../containers/LetterListContainer'
 import ChatList from '../containers/ChatListContainer'
 import "../style/letters.scss"
@@ -14,11 +14,16 @@ const Greetings = () => (
 );
 
 
-class MainPage extends PureComponent {
+class MainPage extends Component {
 
     constructor(props) {
         super(props);
-        this.props.getSessionUserName();
+    }
+
+    componentWillMount() {
+        if(!this.props.isLoading && !this.props.isAuthorized && !this.props.isErrorAuth) {
+            this.props.getSessionUserName();
+        }
     }
 
     getChatListOrAuth = () => {
