@@ -13,13 +13,14 @@
   @extend .btn, .btn-primary, .btn-sm, .my-1, .text-left;
 }
 
-.btn-user-info {
-  background-color: $person_color;
-  color: white;
-}
-
 .btn-rounded {
   @extend .btn, .btn-light, .btn-sm, .mb-2;
+  border-radius: 25px;
+}
+
+.btn-rounded-info {
+  @extend .btn, .btn-info, .btn-sm, .mb-2;
+  color: white;
   border-radius: 25px;
 }
 

@@ -39,7 +39,7 @@ class ChatList extends PureComponent {
     };
 
     userInfo = (
-        <button type="button" className="btn-rounded btn-block btn-user-info" onClick={() => this.handleClickSettings()}>
+        <button type="button" className="btn-rounded-info btn-block" onClick={() => this.handleClickSettings()}>
             <FontAwesomeIcon icon={faUserCircle}/> {this.props.session.name}
         </button>
     );
