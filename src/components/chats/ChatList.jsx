@@ -3,7 +3,8 @@ import isEmpty from 'lodash/isEmpty'
 import isNull from 'lodash/isNull'
 import ChatName from '../../containers/ChatNameContainer'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import faBars from "@fortawesome/fontawesome-free-solid/faBars";
+import faUserCircle from "@fortawesome/fontawesome-free-solid/faUserCircle";
+import faTimesCircle from "@fortawesome/fontawesome-free-solid/faTimesCircle";
 import {ChatLoader} from "../../util/Loader";
 import moment from "moment";
 
@@ -38,14 +39,14 @@ class ChatList extends PureComponent {
     };
 
     userInfo = (
-        <button type="button" className="btn-rounded btn-block" onClick={() => this.handleClickSettings()}>
-            <FontAwesomeIcon icon={faBars}/> {this.props.session.name}
+        <button type="button" className="btn-rounded btn-block btn-user-info" onClick={() => this.handleClickSettings()}>
+            <FontAwesomeIcon icon={faUserCircle}/> {this.props.session.name}
         </button>
     );
 
     userInfoSelected = (
         <button type="button" className="btn-rounded-selected btn-block" onClick={() => this.handleClickSettings()}>
-            <FontAwesomeIcon icon={faBars}/> {this.props.session.name}
+            <FontAwesomeIcon icon={faTimesCircle}/> {this.props.session.name}
         </button>
     );
 

@@ -13,6 +13,11 @@
   @extend .btn, .btn-primary, .btn-sm, .my-1, .text-left;
 }
 
+.btn-user-info {
+  background-color: $person_color;
+  color: white;
+}
+
 .btn-rounded {
   @extend .btn, .btn-light, .btn-sm, .mb-2;
   border-radius: 25px;
@@ -43,7 +48,7 @@
 
 .letter-card-sender {
   @extend .letter-card;
-  background-color: #F8F8F8;
+  background-color: #FAFAFA;
 }
 
 .letter-card-header {
@@ -65,11 +70,11 @@
 .in-address-badge {
   @extend .address-badge;
   color: white;
-  background-color: #80BECF;
+  background-color: $other_color;
 }
 
 .out-address-badge {
   @extend .address-badge;
   color: white;
-  background-color: #FFA89A;
+  background-color: $person_color;
 }
