@@ -4,14 +4,26 @@ class Auth extends PureComponent {
 
     constructor(props) {
         super(props);
-        this.state = {username: '', password: ''};
+        this.state = {username: '', password: '', invalidName: false};
+    }
+
+    validEmailName(name) {
+        const emailRegexp = /^\w+([\.-]?\w+)*$/;
+        if (!name.match(emailRegexp)) {
+            this.setState({invalidName: true});
+            return false;
+        } else {
+            this.setState({invalidName: false});
+            return true;
+        }
     }
 
     changeUsername = (event) => {
-        this.setState({username: event.target.value});
-        if (this.state.username.length > 1) {
-            this.props.checkUserName(event.target.value);
-        }
+        const username = event.target.value;
+        this.setState({username: username});
+        if (!this.validEmailName(username)) return;
+        if (this.state.username.length < 2) return;
+        this.props.checkUserName(username);
     };
 
     changePassword = (event) => this.setState({password: event.target.value});
@@ -26,7 +38,7 @@ class Auth extends PureComponent {
     };
 
     getAuthButtonName = () => {
-        console.log("is login exists ", this.props.isLoginExists);
+        if (this.state.invalidName === true) return "Некорректное имя email'a";
         if (this.state.username === "") return "Войти или создать";
         if (this.props.isLoginExists) return this.state.password.length < 6 ? "Уже существует, введите пароль" : "Войти";
         if (this.state.username.length < 3) return "Продолжайте вводить имя";
@@ -36,6 +48,7 @@ class Auth extends PureComponent {
 
 
     render() {
+        console.log("IS VALID: ",!this.state.invalidName);
         return (
             <div className="letter-card">
                 <form className="common-form-group">
