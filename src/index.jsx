@@ -14,6 +14,11 @@ import {syncHistoryWithStore} from "react-router-redux";
 import {createBrowserHistory} from "history";
 
 let middleware = [thunkMiddleware, logger];
+
+if (process.env.NODE_ENV !== 'production') {
+    middleware = [...middleware, logger];
+}
+
 const defaultStore = {};
 export const store = createStore(reducers, defaultStore, applyMiddleware(...middleware));
 export const history = syncHistoryWithStore(createBrowserHistory(), store);
