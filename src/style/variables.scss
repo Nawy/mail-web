@@ -6,7 +6,7 @@ $other_color: #FFA89A;
 
 $theme-colors: (
         "primary": #686A72,
-        "danger": #ff4136,
+        "danger": $other_color,
         "success": #b2ffb2,
         "info": $person_color
 );

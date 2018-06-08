@@ -4,19 +4,18 @@ import ContentLoader from "react-content-loader";
 
 export const ChatLoader = props => (
     <ContentLoader
-        height={242}
-        width={323}
+        height={296}
+        width={325}
         speed={1}
         primaryColor="#f8f9fa"
         secondaryColor="#F7F5F3"
         {...props}>
-
-        <rect x="8" y="8" rx="5" ry="5" width="307" height="31"/>
-        <rect x="8" y="47" rx="5" ry="5" width="307" height="31"/>
-        <rect x="8" y="86" rx="5" ry="5" width="307" height="31"/>
-        <rect x="8" y="125" rx="5" ry="5" width="307" height="31"/>
-        <rect x="8" y="164" rx="5" ry="5" width="307" height="31"/>
-        <rect x="8" y="203" rx="5" ry="5" width="307" height="31"/>
+        <rect x="8" y="8" rx="5" ry="5" width="320" height="40"/>
+        <rect x="8" y="56" rx="5" ry="5" width="320" height="40"/>
+        <rect x="8" y="104" rx="5" ry="5" width="320" height="40"/>
+        <rect x="8" y="152" rx="5" ry="5" width="320" height="40"/>
+        <rect x="8" y="200" rx="5" ry="5" width="320" height="40"/>
+        <rect x="8" y="248" rx="5" ry="5" width="320" height="40"/>
     </ContentLoader>
 );
 

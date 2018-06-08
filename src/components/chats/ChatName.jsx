@@ -14,12 +14,10 @@ class ChatName extends Component {
         }
     };
 
-    ammountNewNumber = () => (
-        <Badge className="float-right"
-               style={{margin: 'inherit', border: 'inherit', padding: 'inherit'}}
-               color="light">
+    amountNewNumber = () => (
+        <span className="letter-counter-badge">
             {this.props.chat.amountNew}
-        </Badge>
+        </span>
     );
 
     render() {
@@ -30,8 +28,14 @@ class ChatName extends Component {
                 className={isButtonPushed? "btn-address-selected" :"btn-address"}
                 onClick={() => this.changeButtonState(isButtonPushed)}
             >
-                {this.props.chat.name}
-                {this.props.chat.amountNew < 1 ? "" : this.ammountNewNumber()}
+                <div className="d-flex flex-row">
+                    <div className="p-1 flex-fill justify-content-start">
+                        {this.props.chat.name}
+                    </div>
+                    <div className="p-1 justify-content-end">
+                        {this.props.chat.amountNew < 1 ? "" : this.amountNewNumber()}
+                    </div>
+                </div>
             </button>
         );
     }

@@ -79,3 +79,8 @@
   color: white;
   background-color: $person_color;
 }
+
+.letter-counter-badge {
+  @extend .badge, .badge-danger;
+  color: white;
+}
