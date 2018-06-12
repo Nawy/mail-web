@@ -44,19 +44,5 @@ module.exports = merge(common, {
                 windows: true
             }
         })
-    ],
-    devServer: {
-        progress: true,
-        historyApiFallback: {
-            disableDotRule: true
-        },
-        port: 3000,
-        proxy: {
-            '/api': {
-                target: 'http://localhost:8090',
-                changeOrigin: true,
-                pathRewrite: {'^/api': ''},
-            }
-        }
-    }
+    ]
 });
