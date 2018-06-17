@@ -5,11 +5,13 @@ import OutcomingLettter from "./OutcomingLetter";
 const Letter = ({letter, userEmail}) =>
     letter.direction === "INBOX" ?
         <IncomingLettter from={letter.address}
-                         text={letter.htmlText}
+                         htmlText={letter.htmlText}
+                         text={letter.text}
                          date={letter.deliveryTime}
         /> :
         <OutcomingLettter from={userEmail + "@lite.ninja"}
-                          text={letter.htmlText}
+                          htmlText={letter.htmlText}
+                          text={letter.text}
                           date={letter.deliveryTime}
         />;
 

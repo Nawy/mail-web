@@ -3,30 +3,15 @@
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-@media (min-width: 576px) {
+@media (min-width: 578px) {
   .container {
-    width: 400px;
+    max-width: 100%;
   }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .container {
-    width: 900px;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .container {
-    width: 900px;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .container {
-    width: 1000px;
+    max-width: 1200px;
   }
 }
 
@@ -76,10 +61,10 @@ textarea:focus
 }
 
 .left-main-col {
-  @extend .col-sm-4;
+  @extend .col-sm-3;
   padding: 5px;
 }
 .right-main-col {
-  @extend .col-sm-8;
+  @extend .col-sm-9;
   padding: 5px;
 }
