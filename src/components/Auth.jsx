@@ -48,7 +48,6 @@ class Auth extends PureComponent {
 
 
     render() {
-        console.log("IS VALID: ",!this.state.invalidName);
         return (
             <div className="letter-card">
                 <form className="common-form-group">
