@@ -4,7 +4,7 @@ import {Route, Router, Switch} from "react-router-dom";
 import {history} from '../index';
 
 
-const CustomRouter = () => {
+const Router = () => {
     return (
         <main>
             <Router history={history}>
@@ -17,4 +17,4 @@ const CustomRouter = () => {
     );
 };
 
-export default CustomRouter;
+export default Router;

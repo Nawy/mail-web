@@ -4,6 +4,7 @@ import ChatList from '../containers/ChatListContainer'
 import "../style/letters.scss"
 import Auth from "../containers/AuthContainer";
 import {ChatLoader, MessageLoader} from "../util/Loader";
+import WebSocketComponent from "../containers/WebSocketContainer";
 
 const Greetings = () => (
     <div className="letter-card">
@@ -47,6 +48,7 @@ class MainPage extends Component {
                         {this.getMessagesOrGreeting()}
                     </div>
                 </div>
+                <WebSocketComponent/>
             </div>);
     }
 }

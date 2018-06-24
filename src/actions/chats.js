@@ -16,14 +16,6 @@ export const sendLetter = (address, text) =>
         () => getChatsAndSelect(address)
     );
 
-/*export const getChatNamesAndSelect = (address) =>
-    commonGetActionAfterSuccess(
-        api.GET_SPAM_CHAT_NAMES,
-        null,
-        actionTypes.GET_SPAM_CHAT_NAMES,
-        () => getChatMessagesAndSelect(address)
-    );*/
-
 export const getChatsAndSelect = (address) =>
     commonGetActionAfterSuccess(
         api.GET_SPAM_CHATS,
@@ -31,9 +23,6 @@ export const getChatsAndSelect = (address) =>
         actionTypes.GET_SPAM_CHATS,
         () => getChatMessagesAndSelect(address)
     );
-
-/*export const getSpamChats = () =>
-    commonGetAction(api.GET_SPAM_CHAT_NAMES, null, actionTypes.GET_SPAM_CHAT_NAMES);*/
 
 export const getSpamChats = () =>
     commonGetAction(api.GET_SPAM_CHATS, null, actionTypes.GET_SPAM_CHATS);
@@ -50,3 +39,7 @@ export const getChatMessagesAndSelect = (address) =>
         actionTypes.CHAT_MESSAGES,
         () => history.push(address.toLowerCase())
     );
+
+export const chatMessagesAmountReceived = (data) => ({type: actionTypes.CHAT_MESSAGES_AMOUNT_RECEIVED, payload: data});
+
+export const chatMessagesReceived = (messages) => ({type: actionTypes.CHAT_MESSAGES_RECEIVED, payload:messages});

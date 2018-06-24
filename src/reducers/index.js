@@ -1,18 +1,20 @@
 import {combineReducers} from 'redux'
-import {commonReducer} from "../util/reduxHelper";
 import actionTypes from '../actions/actionTypes';
 import windows from "./customReducers/windows";
-import { routerReducer } from 'react-router-redux'
+import {routerReducer} from 'react-router-redux'
+import {commonHttpReducer, commonWebSocketReducer} from "./customReducers/commonReducers";
 
 const appReducer = combineReducers({
     routing: routerReducer,
-    login: (state, action) => commonReducer(actionTypes.LOGIN, action, state),
-    logout: (state, action) => commonReducer(actionTypes.LOGOUT, action, state),
-    createNewUser: (state, action) => commonReducer(actionTypes.CREATE_NEW_USER, action, state),
-    userName: (state, action) => commonReducer(actionTypes.CHECK_USER_NAME, action, state),
-    userSession: (state, action) => commonReducer(actionTypes.GET_SESSION_USER_NAME, action, state),
-    spamChats: (state, action) => commonReducer(actionTypes.GET_SPAM_CHATS, action, state),
-    chatMessages: (state, action) => commonReducer(actionTypes.CHAT_MESSAGES, action, state),
+    login: (state, action) => commonHttpReducer(actionTypes.LOGIN, action, state),
+    logout: (state, action) => commonHttpReducer(actionTypes.LOGOUT, action, state),
+    createNewUser: (state, action) => commonHttpReducer(actionTypes.CREATE_NEW_USER, action, state),
+    userName: (state, action) => commonHttpReducer(actionTypes.CHECK_USER_NAME, action, state),
+    userSession: (state, action) => commonHttpReducer(actionTypes.GET_SESSION_USER_NAME, action, state),
+    spamChats: (state, action) => commonHttpReducer(actionTypes.GET_SPAM_CHATS, action, state),
+    chatMessages: (state, action) => commonHttpReducer(actionTypes.CHAT_MESSAGES, action, state),
+    newChatMessagesAmount: (state, action) => commonWebSocketReducer(actionTypes.CHAT_MESSAGES_AMOUNT_RECEIVED, action, state),
+    chatNewMessages: (state, action) => commonWebSocketReducer(actionTypes.CHAT_MESSAGES_RECEIVED, action, state),
     windows
 });
 

@@ -1,6 +1,5 @@
 import {connect} from "react-redux";
 import ChatList from "../components/chats/ChatList";
-import isNull from 'lodash/isNull'
 import {getSpamChats} from "../actions/chats";
 import {hideAllForms, showSettingsForm} from "../actions/windows";
 

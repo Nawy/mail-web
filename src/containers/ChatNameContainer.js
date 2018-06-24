@@ -1,6 +1,5 @@
 import {connect} from "react-redux";
 import ChatName from "../components/chats/ChatName";
-import {getChatMessages} from "../actions/chats";
 import {withRouter} from "react-router-dom";
 import {hideAllForms} from "../actions/windows";
 
